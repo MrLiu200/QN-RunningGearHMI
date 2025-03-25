@@ -8,11 +8,3 @@ LIBS += $$PWD/winlib/libfftw3-3.lib \
 unix{
 LIBS += $$PWD/linuxlib/libfftw3.so.3.6.10
 }
-#Hello everyone ,this is a test file
-#Hello everyone ,this is a test file
-#Hello everyone ,this is a test file
-#Hello everyone ,this is a test file
-#Hello everyone ,this is a test file
-#Hello everyone ,this is a test file
-#Hello everyone ,this is a test file
-#Hello everyone ,this is a test file

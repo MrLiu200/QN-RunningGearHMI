@@ -9,14 +9,3 @@ SOURCES += \
     $$PWD/m_dbapi.cpp \
     $$PWD/m_dirinit.cpp \
     $$PWD/predata.cpp
-#Hello everyone ,this is a test file
-#Hello everyone ,this is a test file
-#Hello everyone ,this is a test file
-#Hello everyone ,this is a test file
-#Hello everyone ,this is a test file
-#Hello everyone ,this is a test file
-#Hello everyone ,this is a test file
-#Hello everyone ,this is a test file
-#Hello everyone ,this is a test file
-#Hello everyone ,this is a test file
-#Hello everyone ,this is a test file
