@@ -1,0 +1,2 @@
+C:\software\mingw64\bin\ar.exe qc libbzip2.a CMakeFiles/bzip2.dir/bzip2_autogen/mocs_compilation.cpp.obj CMakeFiles/bzip2.dir/lib/bzip2/blocksort.c.obj CMakeFiles/bzip2.dir/lib/bzip2/bzlib.c.obj CMakeFiles/bzip2.dir/lib/bzip2/compress.c.obj CMakeFiles/bzip2.dir/lib/bzip2/crctable.c.obj CMakeFiles/bzip2.dir/lib/bzip2/decompress.c.obj CMakeFiles/bzip2.dir/lib/bzip2/huffman.c.obj CMakeFiles/bzip2.dir/lib/bzip2/randtable.c.obj
+C:\software\mingw64\bin\ranlib.exe libbzip2.a

@@ -1,0 +1,25 @@
+QMAKE_CXX.QT_COMPILER_STDCXX = 201402L
+QMAKE_CXX.QMAKE_GCC_MAJOR_VERSION = 9
+QMAKE_CXX.QMAKE_GCC_MINOR_VERSION = 2
+QMAKE_CXX.QMAKE_GCC_PATCH_VERSION = 1
+QMAKE_CXX.COMPILER_MACROS = \
+    QT_COMPILER_STDCXX \
+    QMAKE_GCC_MAJOR_VERSION \
+    QMAKE_GCC_MINOR_VERSION \
+    QMAKE_GCC_PATCH_VERSION
+QMAKE_CXX.INCDIRS = \
+    /opt/arago-2021.09-aarch64-linux-tisdk/sysroots/x86_64-arago-linux/usr/aarch64-none-linux-gnu/include/c++/9.2.1 \
+    /opt/arago-2021.09-aarch64-linux-tisdk/sysroots/x86_64-arago-linux/usr/aarch64-none-linux-gnu/include/c++/9.2.1/aarch64-none-linux-gnu \
+    /opt/arago-2021.09-aarch64-linux-tisdk/sysroots/x86_64-arago-linux/usr/aarch64-none-linux-gnu/include/c++/9.2.1/backward \
+    /opt/arago-2021.09-aarch64-linux-tisdk/sysroots/x86_64-arago-linux/usr/lib/gcc/aarch64-none-linux-gnu/9.2.1/include \
+    /opt/arago-2021.09-aarch64-linux-tisdk/sysroots/x86_64-arago-linux/usr/lib/gcc/aarch64-none-linux-gnu/9.2.1/include-fixed \
+    /opt/arago-2021.09-aarch64-linux-tisdk/sysroots/x86_64-arago-linux/usr/aarch64-none-linux-gnu/include \
+    /opt/arago-2021.09-aarch64-linux-tisdk/sysroots/aarch64-linux/usr/include
+QMAKE_CXX.LIBDIRS = \
+    /opt/arago-2021.09-aarch64-linux-tisdk/sysroots/x86_64-arago-linux/usr/lib/gcc/aarch64-none-linux-gnu/9.2.1 \
+    /opt/arago-2021.09-aarch64-linux-tisdk/sysroots/x86_64-arago-linux/usr/lib/gcc \
+    /opt/arago-2021.09-aarch64-linux-tisdk/sysroots/aarch64-linux/lib/aarch64-none-linux-gnu/9.2.1 \
+    /opt/arago-2021.09-aarch64-linux-tisdk/sysroots/aarch64-linux/usr/lib/aarch64-none-linux-gnu/9.2.1 \
+    /opt/arago-2021.09-aarch64-linux-tisdk/sysroots/x86_64-arago-linux/usr/aarch64-none-linux-gnu/lib \
+    /opt/arago-2021.09-aarch64-linux-tisdk/sysroots/aarch64-linux/lib \
+    /opt/arago-2021.09-aarch64-linux-tisdk/sysroots/aarch64-linux/usr/lib

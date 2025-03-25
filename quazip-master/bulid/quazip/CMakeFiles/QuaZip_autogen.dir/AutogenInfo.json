@@ -1,0 +1,260 @@
+{
+	"AUTOGEN_COMMAND_LINE_LENGTH_MAX" : 32000,
+	"BUILD_DIR" : "D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid/quazip/QuaZip_autogen",
+	"CMAKE_BINARY_DIR" : "D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid",
+	"CMAKE_CURRENT_BINARY_DIR" : "D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid/quazip",
+	"CMAKE_CURRENT_SOURCE_DIR" : "D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip",
+	"CMAKE_EXECUTABLE" : "C:/software/cmake/bin/cmake.exe",
+	"CMAKE_LIST_FILES" : 
+	[
+		"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/CMakeLists.txt",
+		"C:/software/cmake/share/cmake-3.30/Modules/GNUInstallDirs.cmake",
+		"C:/software/cmake/share/cmake-3.30/Modules/CMakePackageConfigHelpers.cmake",
+		"C:/software/cmake/share/cmake-3.30/Modules/WriteBasicConfigVersionFile.cmake",
+		"C:/software/cmake/share/cmake-3.30/Modules/BasicConfigVersion-SameMajorVersion.cmake.in",
+		"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/QuaZipConfig.cmake.in",
+		"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/quazip.pc.cmakein"
+	],
+	"CMAKE_SOURCE_DIR" : "D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/JlCompress.h",
+			"Mu",
+			"EWIEGA46WW/moc_JlCompress.cpp",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/ioapi.h",
+			"Mu",
+			"EWIEGA46WW/moc_ioapi.cpp",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/minizip_crypt.h",
+			"Mu",
+			"EWIEGA46WW/moc_minizip_crypt.cpp",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/quaadler32.h",
+			"Mu",
+			"EWIEGA46WW/moc_quaadler32.cpp",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/quachecksum32.h",
+			"Mu",
+			"EWIEGA46WW/moc_quachecksum32.cpp",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/quacrc32.h",
+			"Mu",
+			"EWIEGA46WW/moc_quacrc32.cpp",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/quagzipfile.h",
+			"Mu",
+			"EWIEGA46WW/moc_quagzipfile.cpp",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/quaziodevice.h",
+			"Mu",
+			"EWIEGA46WW/moc_quaziodevice.cpp",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/quazip.h",
+			"Mu",
+			"EWIEGA46WW/moc_quazip.cpp",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/quazip_global.h",
+			"Mu",
+			"EWIEGA46WW/moc_quazip_global.cpp",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/quazip_qt_compat.h",
+			"Mu",
+			"EWIEGA46WW/moc_quazip_qt_compat.cpp",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/quazipdir.h",
+			"Mu",
+			"EWIEGA46WW/moc_quazipdir.cpp",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/quazipfile.h",
+			"Mu",
+			"EWIEGA46WW/moc_quazipfile.cpp",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/quazipfileinfo.h",
+			"Mu",
+			"EWIEGA46WW/moc_quazipfileinfo.cpp",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/quazipnewinfo.h",
+			"Mu",
+			"EWIEGA46WW/moc_quazipnewinfo.cpp",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/unzip.h",
+			"Mu",
+			"EWIEGA46WW/moc_unzip.cpp",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/zip.h",
+			"Mu",
+			"EWIEGA46WW/moc_zip.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid/quazip/QuaZip_autogen/include",
+	"MOC_COMPILATION_FILE" : "D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid/quazip/QuaZip_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"HAVE_BZIP2",
+		"QT_CORE_LIB",
+		"QT_NO_DEBUG",
+		"QUAZIP_BUILD",
+		"QuaZip_EXPORTS"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid/quazip",
+		"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip",
+		"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/lib/bzip2",
+		"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master",
+		"C:/software/Qt/Qt5.14.2/5.14.2/mingw73_64/include",
+		"C:/software/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore",
+		"C:/software/Qt/Qt5.14.2/5.14.2/mingw73_64/mkspecs/win32-g++",
+		"D:/project/Qt_project/QtTablig2.0.1/zlib131/zlib-1.3.1",
+		"C:/software/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++",
+		"C:/software/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32",
+		"C:/software/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward",
+		"C:/software/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include",
+		"C:/software/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed",
+		"C:/software/mingw64/x86_64-w64-mingw32/include"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"C:/software/mingw64/bin/c++.exe",
+		"-std=gnu++14",
+		"-dM",
+		"-E",
+		"-c",
+		"C:/software/cmake/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid/quazip/QuaZip_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 10,
+	"PARSE_CACHE_FILE" : "D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid/quazip/CMakeFiles/QuaZip_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "C:/software/Qt/Qt5.14.2/5.14.2/mingw73_64/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 14,
+	"SETTINGS_FILE" : "D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid/quazip/CMakeFiles/QuaZip_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/JlCompress.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/qioapi.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/quaadler32.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/quachecksum32.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/quacrc32.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/quagzipfile.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/quaziodevice.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/quazip.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/quazipdir.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/quazipfile.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/quazipfileinfo.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/quazipnewinfo.cpp",
+			"Mu",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/unzip.c",
+			"Mu",
+			null
+		],
+		[
+			"D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/quazip/zip.c",
+			"Mu",
+			null
+		]
+	],
+	"USE_BETTER_GRAPH" : false,
+	"VERBOSITY" : 0
+}

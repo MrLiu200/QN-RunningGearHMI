@@ -1,0 +1,13 @@
+prefix=/opt/arago-2021.09-aarch64-linux-tisdk/sysroots/aarch64-linux/usr
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+
+Name: Quazip
+Description: Quazip Library
+Version: 1.0.0
+Libs: -lquazip 
+Cflags: 
+Requires: Qt5Core
+

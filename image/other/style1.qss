@@ -1,0 +1,298 @@
+/* 全局背景 */
+
+QWidget {
+    background-color: #2B2B2B; /* 深灰色背景 */
+    color: #E0E0E0; /* 浅灰色文字 */
+    font-size: 16px;
+    border: none;
+}
+
+/* QToolButton - 左侧菜单 */
+#tbtn_measurePoint, #tbtn_bearing, #tbtn_association, #tbtn_timertask, #tbtn_network,
+#tbtn_carinfo, #tbtn_alarmlimit, #tbtn_datasave, #tbtn_APPUpdate, #tbtn_devicereboot {
+    background-color: #3A3F44; /* 深色按钮 */
+    color: #76C7C0; /* 青绿色文字 */
+    border-radius: 8px;
+    /*padding: 10px;*/
+    padding: 5px;
+    font-size: 16px;
+}
+
+#tbtn_measurePoint:hover, #tbtn_bearing:hover, #tbtn_association:hover, #tbtn_timertask:hover,
+#tbtn_network:hover, #tbtn_carinfo:hover, #tbtn_alarmlimit:hover, #tbtn_datasave:hover,
+#tbtn_APPUpdate:hover, #tbtn_devicereboot:hover {
+    background-color: #4F565D; /* 浅灰色 Hover 效果 */
+}
+
+/* 选中状态的高亮 */
+#tbtn_measurePoint:checked, #tbtn_bearing:checked, #tbtn_association:checked, #tbtn_timertask:checked,
+#tbtn_network:checked, #tbtn_carinfo:checked, #tbtn_alarmlimit:checked, #tbtn_datasave:checked,
+#tbtn_APPUpdate:checked, #tbtn_devicereboot:checked {
+    background-color: #1976D2; /* 高亮蓝色 */
+    color: white; /* 文字变白 */
+    font-weight: bold;
+    border: 2px solid #2196F3; /* 添加边框强调 */
+}
+
+/* QToolButton - 右上角按钮 */
+#toolButton_11, #toolButton_12, #toolButton_13, #toolButton_14, #toolButton_15, #toolButton_16 {
+    background-color: #1E88E5; /* 霓虹蓝 */
+    color: white;
+    border-radius: 20px;
+    /*padding: 8px;*/
+    padding: 4px;
+    font-size: 18px;
+}
+
+#toolButton_11:hover, #toolButton_12:hover, #toolButton_13:hover, 
+#toolButton_14:hover, #toolButton_15:hover, #toolButton_16:hover {
+    background-color: #1565C0; /* 深蓝 Hover */
+}
+
+/* 右上角按钮的选中状态 */
+#toolButton_11:checked, #toolButton_12:checked, #toolButton_13:checked,
+#toolButton_14:checked, #toolButton_15:checked, #toolButton_16:checked {
+    background-color: #FF9800; /* 选中变为亮橙色 */
+    color: white;
+    font-weight: bold;
+    border: 2px solid #FFB74D; /* 边框变色 */
+}
+
+/* QTableView - 数据表 */
+QTableView {
+    background-color: #333;
+    border: 1px solid #444;
+    gridline-color: #555;
+    color: #DDD; /* 亮灰色字体 */
+}
+
+QHeaderView::section {
+    background-color: #1976D2;
+    color: white;
+    /*padding: 6px;*/
+    padding: 3px;
+    border: none;
+    font-size: 15px;
+}
+ 
+/* QStackedWidget */
+QStackedWidget {
+    background-color: #3A3F44;
+    border-radius: 5px;
+}
+
+QPushButton {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+                stop:0 #008CDA, stop:1 #006BB8); /* 轻微渐变 */
+    color: white;
+    border-radius: 6px;
+   /* padding: 10px 18px;*/
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    /*transition: all 0.25s ease-in-out;*/
+}
+
+QPushButton:hover {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, 
+                stop:0 #009CEA, stop:1 #007AC8); /* 亮一点 */
+    /*box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);*/ /* 轻微阴影 */
+    /*transform: scale(1.06);*/
+}
+
+QPushButton:pressed {
+    background: #005A9E;
+    /*transform: scale(0.94);*/
+}
+
+QPushButton:disabled {
+    background: #B0B0B0;
+    color: #E0E0E0;
+    /*box-shadow: none;*/
+}
+
+/* QGroupBox - 组框 */
+QGroupBox {
+    background-color: #3A3F44; /* 深灰色背景 */
+    border: 2px solid #1976D2; /* 蓝色边框 */
+    border-radius: 8px;
+    margin-top: 12px; /* 与标题分隔 */
+    font-size: 16px;
+    font-weight: bold;
+    color: #E0E0E0;
+    /*padding: 6px;*/
+    padding: 3px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    /*padding: 4px 10px;*/
+    padding: 2px 5px;
+    background-color: #1976D2;
+    color: white;
+    border-radius: 4px;
+}
+
+/* QLineEdit - 输入框 */
+QLineEdit {
+    background-color: #2B2B2B; /* 深色背景 */
+    color: #E0E0E0; /* 浅灰色文字 */
+    border: 1px solid #555;
+    border-radius: 4px;
+    /*padding: 6px;*/
+    padding: 4px;
+    font-size: 14px;
+}
+
+QLineEdit:hover {
+    border: 1px solid #76C7C0; /* 青绿色边框 */
+}
+
+QLineEdit:focus {
+    border: 2px solid #2196F3; /* 选中时高亮蓝色 */
+}
+
+/* QLabel - 标签 */
+QLabel {
+    background-color: transparent; /* 透明背景 */
+    color: #E0E0E0; /* 浅灰色字体 */
+    font-size: 14px;
+    border: none; /* 确保没有边框 */
+}
+
+QLabel[highlight="true"] {
+    color: #FF9800; /* 高亮时橙色 */
+    font-weight: bold;
+}
+
+/* QComboBox - 下拉框 */
+QComboBox {
+    background-color: #2B2B2B; /* 深色背景 */
+    color: #E0E0E0; /* 浅灰色文字 */
+    border: 1px solid #555;
+    border-radius: 4px;
+    /*padding: 6px;*/
+    padding: 3px;
+    font-size: 14px;
+}
+
+QComboBox:hover {
+    border: 1px solid #76C7C0; /* 青绿色边框 */
+}
+
+QComboBox:focus {
+    border: 2px solid #2196F3; /* 选中时高亮蓝色 */
+}
+
+QComboBox::drop-down {
+    border: none;
+    background: transparent;
+}
+
+QComboBox::down-arrow {
+    image: url(:/icons/down-arrow.png); /* 替换为合适的箭头图标 */
+    width: 12px;
+    height: 12px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #3A3F44; /* 深灰色背景 */
+    border: 1px solid #555;
+    selection-background-color: #1976D2; /* 选中项高亮蓝色 */
+    selection-color: white; /* 选中文字颜色 */
+    color: #E0E0E0;
+    outline: 0;
+}
+
+QComboBox QAbstractItemView::item {
+    /*padding: 6px;*/
+    padding: 3px;
+}
+
+QComboBox QAbstractItemView::item:hover {
+    background-color: #4F565D; /* 浅灰色 Hover 效果 */
+}
+
+QComboBox QAbstractItemView::item:selected {
+    background-color: #1976D2; /* 选中时高亮蓝色 */
+    color: white;
+}
+
+/* QRadioButton - 单选按钮 */
+QRadioButton {
+    background-color: transparent; /* 透明背景 */
+    color: #E0E0E0; /* 浅灰色文字 */
+    font-size: 14px;
+    border: none;
+    /*padding: 4px;*/
+    padding: 2px;
+}
+
+/* 未选中状态 */
+QRadioButton::indicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    border: 2px solid #555;
+    background-color: #2B2B2B;
+}
+
+/* 选中状态 */
+QRadioButton::indicator:checked {
+    border: 2px solid #2196F3;
+    background-color: #2196F3;
+}
+
+/* 悬停状态 */
+QRadioButton::indicator:hover {
+    border: 2px solid #76C7C0;
+}
+
+/* 禁用状态 */
+QRadioButton::indicator:disabled {
+    border: 2px solid #777;
+    background-color: #444;
+}
+
+/* QCheckBox - 复选框 */
+QCheckBox {
+    background-color: transparent;
+    color: #E0E0E0;
+    font-size: 14px;
+    border: none;
+    /*padding: 4px;*/
+    padding: 2px;
+}
+
+/* 复选框未选中状态 */
+QCheckBox::indicator {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #555;
+    background-color: #2B2B2B;
+}
+
+/* 复选框选中状态 */
+QCheckBox::indicator:checked {
+    background-color: #2196F3;
+    border: 2px solid #2196F3;
+}
+
+/* 复选框部分选中（半选）状态 */
+QCheckBox::indicator:indeterminate {
+    background-color: #FF9800;
+    border: 2px solid #FF9800;
+}
+
+/* 复选框悬停状态 */
+QCheckBox::indicator:hover {
+    border: 2px solid #76C7C0;
+}
+
+/* 复选框禁用状态 */
+QCheckBox::indicator:disabled {
+    border: 2px solid #777;
+    background-color: #444;
+}

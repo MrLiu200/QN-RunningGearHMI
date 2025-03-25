@@ -1,0 +1,16 @@
+D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid/CMakeFiles/bzip2.dir
+D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid/CMakeFiles/edit_cache.dir
+D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid/CMakeFiles/rebuild_cache.dir
+D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid/CMakeFiles/list_install_components.dir
+D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid/CMakeFiles/install.dir
+D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid/CMakeFiles/install/local.dir
+D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid/CMakeFiles/install/strip.dir
+D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid/CMakeFiles/bzip2_autogen.dir
+D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid/quazip/CMakeFiles/QuaZip.dir
+D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid/quazip/CMakeFiles/edit_cache.dir
+D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid/quazip/CMakeFiles/rebuild_cache.dir
+D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid/quazip/CMakeFiles/list_install_components.dir
+D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid/quazip/CMakeFiles/install.dir
+D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid/quazip/CMakeFiles/install/local.dir
+D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid/quazip/CMakeFiles/install/strip.dir
+D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid/quazip/CMakeFiles/QuaZip_autogen.dir

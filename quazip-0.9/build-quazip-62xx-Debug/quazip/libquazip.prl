@@ -1,0 +1,5 @@
+QMAKE_PRL_BUILD_DIR = /mnt/hgfs/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-0.9/build-quazip-62xx-Debug/quazip
+QMAKE_PRO_INPUT = quazip.pro
+QMAKE_PRL_TARGET = libquazip.so.1.0.0
+QMAKE_PRL_CONFIG = lex yacc debug exceptions depend_includepath testcase_targets import_plugins import_qpa_plugin file_copies qmake_use qt warn_on link_prl incremental shared shared linux unix posix gcc debug qml_debug qt warn_on create_prl no_install_prl create_pc have_target dll debug_info thread moc resources
+QMAKE_PRL_VERSION = 1.0.0

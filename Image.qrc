@@ -1,0 +1,51 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>image/other/status_green.png</file>
+        <file>image/other/status_red.png</file>
+        <file>image/Icon/Qnode.png</file>
+        <file>image/Icon/1.png</file>
+        <file>image/Icon/2.png</file>
+        <file>image/Icon/first_page.png</file>
+        <file>image/Icon/last_page.png</file>
+        <file>image/Icon/next.png</file>
+        <file>image/Icon/previous.png</file>
+        <file>image/Icon/delete.png</file>
+        <file>image/Icon/user_add.png</file>
+        <file>image/Icon/about.png</file>
+        <file>image/Icon/User_Manual.png</file>
+        <file>image/Icon/fullscreen.png</file>
+        <file>image/Icon/fullscreen_exit.png</file>
+        <file>image/Icon/download.png</file>
+        <file>image/Icon/magnifier.png</file>
+        <file>image/Icon/reset.png</file>
+        <file>image/Icon/loading.png</file>
+        <file>image/Icon/fre_differ.png</file>
+        <file>image/Icon/pinpu.png</file>
+        <file>image/Icon/hanning.png</file>
+        <file>image/Icon/bar_chart.png</file>
+        <file>image/Icon/fixed_add.png</file>
+        <file>image/Icon/fixed_reduce.png</file>
+        <file>image/Icon/location.png</file>
+        <file>image/Icon/exceed.png</file>
+        <file>image/Icon/range.png</file>
+        <file>image/Icon/frequency_doubling.png</file>
+        <file>image/Icon/broom.png</file>
+        <file>image/Icon/demodulated.png</file>
+        <file>image/Icon/SetTimeInterval.png</file>
+        <file>image/Icon/connect.ico</file>
+        <file>image/Icon/config.ico</file>
+        <file>image/Icon/db.ico</file>
+        <file>image/Icon/newconfig.ico</file>
+        <file>image/Icon/newdatabase.ico</file>
+        <file>image/Icon/screenshot.ico</file>
+        <file>image/Icon/screenshot.png</file>
+        <file>image/Icon/livedemodulated.png</file>
+        <file>image/Icon/pk.png</file>
+        <file>image/Icon/download.ico</file>
+    </qresource>
+    <qresource prefix="/other">
+        <file>image/other/help.txt</file>
+        <file>image/other/qt_zh_CN.qm</file>
+        <file>image/other/widgets.qm</file>
+    </qresource>
+</RCC>

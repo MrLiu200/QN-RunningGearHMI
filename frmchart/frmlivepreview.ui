@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>frmLivePreview</class>
+ <widget class="QWidget" name="frmLivePreview">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1388</width>
+    <height>1009</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <widget class="QFrame" name="frame_3">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QWidget" name="widgetInfo" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="labInfoTime">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labInfoName">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labInfoAlarm">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QWidget" name="widgetConfigure" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="lab_DateStart">
+           <property name="text">
+            <string>开始时间</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDateTimeEdit" name="StartDateTime"/>
+         </item>
+         <item>
+          <widget class="QLabel" name="lab_DateEnd">
+           <property name="text">
+            <string>结束时间</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDateTimeEdit" name="EndDateTime"/>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_QueryData">
+           <property name="text">
+            <string>筛选</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_GetData">
+           <property name="text">
+            <string>获取远程数据</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QCustomPlot" name="CustomPlotOriginal" native="true"/>
+      </item>
+      <item>
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCustomPlot" name="CustomPlot_Spectrum" native="true"/>
+      </item>
+      <item>
+       <widget class="Line" name="line_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCustomPlot" name="CustomPlot_Trend" native="true"/>
+      </item>
+      <item>
+       <widget class="Line" name="line_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget_Dimension" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <property name="horizontalSpacing">
+          <number>0</number>
+         </property>
+         <property name="verticalSpacing">
+          <number>5</number>
+         </property>
+         <item row="0" column="0">
+          <layout class="QGridLayout" name="gridLayout_3">
+           <property name="sizeConstraint">
+            <enum>QLayout::SetDefaultConstraint</enum>
+           </property>
+           <item row="1" column="8">
+            <widget class="QLineEdit" name="txt_Okurtosis"/>
+           </item>
+           <item row="2" column="12">
+            <widget class="QLineEdit" name="txt_Dimpulse_factor"/>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLineEdit" name="txt_Omin"/>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="txt_Omax"/>
+           </item>
+           <item row="1" column="3">
+            <widget class="QLineEdit" name="txt_Omean"/>
+           </item>
+           <item row="1" column="10">
+            <widget class="QLineEdit" name="txt_Ocrest_factor"/>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="lab_DemodulatedDimension">
+             <property name="text">
+              <string>包络量纲</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="8">
+            <widget class="QLineEdit" name="txt_Dkurtosis"/>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="lab_OrigineDimension">
+             <property name="text">
+              <string>原始量纲</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="lab_max">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>最大值</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="5">
+            <widget class="QLabel" name="lab_std_deviation">
+             <property name="text">
+              <string>标准差</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="8">
+            <widget class="QLabel" name="lab_kurtosis">
+             <property name="text">
+              <string>峭度</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="4">
+            <widget class="QLineEdit" name="txt_Ovariance"/>
+           </item>
+           <item row="0" column="4">
+            <widget class="QLabel" name="lab_variance">
+             <property name="text">
+              <string>方差</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="9">
+            <widget class="QLineEdit" name="txt_Dpeaktopeak"/>
+           </item>
+           <item row="1" column="9">
+            <widget class="QLineEdit" name="txt_Opeaktopeak"/>
+           </item>
+           <item row="2" column="5">
+            <widget class="QLineEdit" name="txt_Ddeviation"/>
+           </item>
+           <item row="0" column="2">
+            <widget class="QLabel" name="lab_min">
+             <property name="text">
+              <string>最小值</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3">
+            <widget class="QLineEdit" name="txt_Dmean"/>
+           </item>
+           <item row="1" column="12">
+            <widget class="QLineEdit" name="txt_Oimpulse_factor"/>
+           </item>
+           <item row="0" column="7">
+            <widget class="QLabel" name="lab_rectified_mean">
+             <property name="text">
+              <string>整流平均值</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="12">
+            <widget class="QLabel" name="lab_impulse_factor">
+             <property name="text">
+              <string>脉冲因子</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QLabel" name="lab_mean">
+             <property name="text">
+              <string>均值</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="5">
+            <widget class="QLineEdit" name="txt_Odeviation"/>
+           </item>
+           <item row="1" column="11">
+            <widget class="QLineEdit" name="txt_Opeak_factor"/>
+           </item>
+           <item row="0" column="13">
+            <widget class="QLabel" name="lab_margin_factor">
+             <property name="text">
+              <string>裕度因子</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="7">
+            <widget class="QLineEdit" name="txt_Drectifiedmean"/>
+           </item>
+           <item row="1" column="7">
+            <widget class="QLineEdit" name="txt_Orectifiedmean"/>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="txt_Dmax"/>
+           </item>
+           <item row="2" column="2">
+            <widget class="QLineEdit" name="txt_Dmin"/>
+           </item>
+           <item row="0" column="10">
+            <widget class="QLabel" name="lab_crest_factor">
+             <property name="text">
+              <string>波形因子</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="11">
+            <widget class="QLineEdit" name="txt_Dpeak_factor"/>
+           </item>
+           <item row="1" column="13">
+            <widget class="QLineEdit" name="txt_Omargin_factor"/>
+           </item>
+           <item row="1" column="6">
+            <widget class="QLineEdit" name="txt_Orms"/>
+           </item>
+           <item row="2" column="4">
+            <widget class="QLineEdit" name="txt_Dvariance"/>
+           </item>
+           <item row="2" column="6">
+            <widget class="QLineEdit" name="txt_Drms"/>
+           </item>
+           <item row="0" column="11">
+            <widget class="QLabel" name="lab_peak_factor">
+             <property name="text">
+              <string>峰值因子</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="10">
+            <widget class="QLineEdit" name="txt_Dcrest_factor"/>
+           </item>
+           <item row="2" column="13">
+            <widget class="QLineEdit" name="txt_Dmargin_factor"/>
+           </item>
+           <item row="0" column="6">
+            <widget class="QLabel" name="lab_rms">
+             <property name="text">
+              <string>均方根</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="9">
+            <widget class="QLabel" name="lab_peaktopeak">
+             <property name="text">
+              <string>峰峰值</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="widget_bottom" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <spacer name="horizontalSpacer_8">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget_2" native="true">
+        <layout class="QGridLayout" name="gridLayout">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <property name="horizontalSpacing">
+          <number>6</number>
+         </property>
+         <property name="verticalSpacing">
+          <number>0</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QPushButton" name="btn_addPK">
+           <property name="text">
+            <string>加入对比</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="5">
+          <widget class="QPushButton" name="btn_echoDBValue">
+           <property name="text">
+            <string>显示DB值</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="4">
+          <widget class="QPushButton" name="btn_closeTrend">
+           <property name="text">
+            <string>关闭趋势</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QPushButton" name="btn_echoDimension">
+           <property name="text">
+            <string>显示量纲</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QPushButton" name="btn_SpeedVector">
+           <property name="text">
+            <string>区间转速</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QPushButton" name="btn_faultFrequency">
+           <property name="text">
+            <string>故障频率</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header location="global">qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

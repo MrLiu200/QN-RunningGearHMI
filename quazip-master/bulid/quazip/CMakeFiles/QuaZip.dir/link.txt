@@ -1,0 +1,3 @@
+C:\software\cmake\bin\cmake.exe -E rm -f CMakeFiles\QuaZip.dir/objects.a
+C:\software\mingw64\bin\ar.exe qc CMakeFiles\QuaZip.dir/objects.a @CMakeFiles\QuaZip.dir\objects1.rsp
+C:\software\mingw64\bin\c++.exe -O3 -DNDEBUG -shared -o libquazip1-qt5.dll -Wl,--out-implib,libquazip1-qt5.dll.a -Wl,--major-image-version,1,--minor-image-version,4 -Wl,--whole-archive CMakeFiles\QuaZip.dir/objects.a -Wl,--no-whole-archive @CMakeFiles\QuaZip.dir\linkLibs.rsp

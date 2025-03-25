@@ -1,0 +1,14 @@
+# Target labels
+ bzip2-populate
+# Source files and their labels
+D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid_ming64/_deps/bzip2-subbuild/CMakeFiles/bzip2-populate
+D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid_ming64/_deps/bzip2-subbuild/CMakeFiles/bzip2-populate.rule
+D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid_ming64/_deps/bzip2-subbuild/CMakeFiles/bzip2-populate-complete.rule
+D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid_ming64/_deps/bzip2-subbuild/bzip2-populate-prefix/src/bzip2-populate-stamp/bzip2-populate-build.rule
+D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid_ming64/_deps/bzip2-subbuild/bzip2-populate-prefix/src/bzip2-populate-stamp/bzip2-populate-configure.rule
+D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid_ming64/_deps/bzip2-subbuild/bzip2-populate-prefix/src/bzip2-populate-stamp/bzip2-populate-download.rule
+D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid_ming64/_deps/bzip2-subbuild/bzip2-populate-prefix/src/bzip2-populate-stamp/bzip2-populate-install.rule
+D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid_ming64/_deps/bzip2-subbuild/bzip2-populate-prefix/src/bzip2-populate-stamp/bzip2-populate-mkdir.rule
+D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid_ming64/_deps/bzip2-subbuild/bzip2-populate-prefix/src/bzip2-populate-stamp/bzip2-populate-patch.rule
+D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid_ming64/_deps/bzip2-subbuild/bzip2-populate-prefix/src/bzip2-populate-stamp/bzip2-populate-test.rule
+D:/project/Qt_project/Example/MySrc/RunningGearHMI/HMI/quazip-master/bulid_ming64/_deps/bzip2-subbuild/bzip2-populate-prefix/src/bzip2-populate-stamp/bzip2-populate-update.rule
