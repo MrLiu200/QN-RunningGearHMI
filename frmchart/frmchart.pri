@@ -1,6 +1,7 @@
 
 
 FORMS += \
+    $$PWD/frmalgorithmoffline.ui \
     $$PWD/frmdbchart.ui \
     $$PWD/frmdemodulatedchart.ui \
     $$PWD/frmfaultfrequencychart.ui \
@@ -9,6 +10,7 @@ FORMS += \
     $$PWD/frmspeedlinechart.ui
 
 HEADERS += \
+    $$PWD/frmalgorithmoffline.h \
     $$PWD/frmdbchart.h \
     $$PWD/frmdemodulatedchart.h \
     $$PWD/frmfaultfrequencychart.h \
@@ -17,6 +19,7 @@ HEADERS += \
     $$PWD/frmspeedlinechart.h
 
 SOURCES += \
+    $$PWD/frmalgorithmoffline.cpp \
     $$PWD/frmdbchart.cpp \
     $$PWD/frmdemodulatedchart.cpp \
     $$PWD/frmfaultfrequencychart.cpp \

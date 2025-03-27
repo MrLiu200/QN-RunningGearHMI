@@ -49,6 +49,7 @@ INCLUDEPATH         += $$PWD/otherapi
 INCLUDEPATH         += $$PWD/fftw
 INCLUDEPATH         += $$PWD/eigen_3.4.0
 INCLUDEPATH         += $$PWD/quazip/include
+INCLUDEPATH         += $$PWD/algorithm
 
 include             ($$PWD/frmchart/frmchart.pri)
 include             ($$PWD/improve/improve.pri)
@@ -62,6 +63,7 @@ include             ($$PWD/api/api.pri)
 include             ($$PWD/otherapi/otherapi.pri)
 include             ($$PWD/fftw/fftw.pri)
 include             ($$PWD/xlsx/qtxlsx.pri)
+include             ($$PWD/algorithm/algorithm.pri)
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin

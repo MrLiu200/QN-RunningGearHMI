@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FrmAlgorithmOffline</class>
+ <widget class="QWidget" name="FrmAlgorithmOffline">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1281</width>
+    <height>948</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QWidget" name="widget_Tab" native="true">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QWidget" name="widget_tabbtn" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_reimport">
+           <property name="text">
+            <string>重新导入</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_allrun">
+           <property name="text">
+            <string>全部运行</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTableWidget" name="tableWidget"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QWidget" name="widget_4" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QGroupBox" name="gbox_bearing1">
+        <property name="title">
+         <string>GroupBox</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="0" column="0">
+          <widget class="QLabel" name="lab_type1">
+           <property name="text">
+            <string>故障类型</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="lab_result1">
+           <property name="text">
+            <string>诊断结果</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="lab_frequency1">
+           <property name="text">
+            <string>故障频率</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QLabel" name="lab_baoluodb1">
+           <property name="text">
+            <string>包络各阶DB值</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="4">
+          <widget class="QLabel" name="lab_pinpudb1">
+           <property name="text">
+            <string>频谱各阶DB值</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="lab_baowai1">
+           <property name="text">
+            <string>保外</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="IndicatorLight" name="led_baowai1" native="true"/>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLineEdit" name="txt_baowai1frequency"/>
+         </item>
+         <item row="1" column="3">
+          <widget class="QLineEdit" name="txt_baowai1baoluo"/>
+         </item>
+         <item row="1" column="4">
+          <widget class="QLineEdit" name="txt_baowai1pinpu"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="lab_baonei1">
+           <property name="text">
+            <string>保内</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="IndicatorLight" name="led_baonei1" native="true"/>
+         </item>
+         <item row="2" column="2">
+          <widget class="QLineEdit" name="txt_baonei1frequency"/>
+         </item>
+         <item row="2" column="3">
+          <widget class="QLineEdit" name="txt_baonei1baoluo"/>
+         </item>
+         <item row="2" column="4">
+          <widget class="QLineEdit" name="txt_baonei1pinpu"/>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="lab_waihuan1">
+           <property name="text">
+            <string>外环</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="IndicatorLight" name="led_waihuan1" native="true"/>
+         </item>
+         <item row="3" column="2">
+          <widget class="QLineEdit" name="txt_waihuan1frequency"/>
+         </item>
+         <item row="3" column="3">
+          <widget class="QLineEdit" name="txt_waihuan1baoluo"/>
+         </item>
+         <item row="3" column="4">
+          <widget class="QLineEdit" name="txt_waihuan1pinpu"/>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="lab_neihuan1">
+           <property name="text">
+            <string>内环</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="IndicatorLight" name="led_neihuan1" native="true"/>
+         </item>
+         <item row="4" column="2">
+          <widget class="QLineEdit" name="txt_neihuan1frequency"/>
+         </item>
+         <item row="4" column="3">
+          <widget class="QLineEdit" name="txt_neihuan1baoluo"/>
+         </item>
+         <item row="4" column="4">
+          <widget class="QLineEdit" name="txt_neihuan1pinpu"/>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="lab_gundong1">
+           <property name="text">
+            <string>滚动体</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="IndicatorLight" name="led_gundong1" native="true"/>
+         </item>
+         <item row="5" column="2">
+          <widget class="QLineEdit" name="txt_gundong1frequency"/>
+         </item>
+         <item row="5" column="3">
+          <widget class="QLineEdit" name="txt_gundong1baoluo"/>
+         </item>
+         <item row="5" column="4">
+          <widget class="QLineEdit" name="txt_gundong1pinpu"/>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="gbox_bearing2">
+        <property name="title">
+         <string>GroupBox</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_3">
+         <item row="0" column="0">
+          <widget class="QLabel" name="lab_type2">
+           <property name="text">
+            <string>故障类型</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="lab_result2">
+           <property name="text">
+            <string>诊断结果</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="lab_frequency2">
+           <property name="text">
+            <string>故障频率</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QLabel" name="lab_baoluodb2">
+           <property name="text">
+            <string>包络各阶DB值</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="4">
+          <widget class="QLabel" name="lab_pinpudb2">
+           <property name="text">
+            <string>频谱各阶DB值</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="lab_baowai2">
+           <property name="text">
+            <string>保外</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="IndicatorLight" name="led_baowai2" native="true"/>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLineEdit" name="txt_baowai2frequency"/>
+         </item>
+         <item row="1" column="3">
+          <widget class="QLineEdit" name="txt_baowai2baoluo"/>
+         </item>
+         <item row="1" column="4">
+          <widget class="QLineEdit" name="txt_baowai2pinpu"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="lab_baonei2">
+           <property name="text">
+            <string>保内</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="IndicatorLight" name="led_baonei2" native="true"/>
+         </item>
+         <item row="2" column="2">
+          <widget class="QLineEdit" name="txt_baonei2frequency"/>
+         </item>
+         <item row="2" column="3">
+          <widget class="QLineEdit" name="txt_baonei2baoluo"/>
+         </item>
+         <item row="2" column="4">
+          <widget class="QLineEdit" name="txt_baonei2pinpu"/>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="lab_waihuan2">
+           <property name="text">
+            <string>外环</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="IndicatorLight" name="led_waihuan2" native="true"/>
+         </item>
+         <item row="3" column="2">
+          <widget class="QLineEdit" name="txt_waihuan2frequency"/>
+         </item>
+         <item row="3" column="3">
+          <widget class="QLineEdit" name="txt_waihuan2baoluo"/>
+         </item>
+         <item row="3" column="4">
+          <widget class="QLineEdit" name="txt_waihuan2pinpu"/>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="lab_neihuan2">
+           <property name="text">
+            <string>内环</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="IndicatorLight" name="led_neihuan2" native="true"/>
+         </item>
+         <item row="4" column="2">
+          <widget class="QLineEdit" name="txt_neihuan2frequency"/>
+         </item>
+         <item row="4" column="3">
+          <widget class="QLineEdit" name="txt_neihuan2baoluo"/>
+         </item>
+         <item row="4" column="4">
+          <widget class="QLineEdit" name="txt_neihuan2pinpu"/>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="lab_gundong2">
+           <property name="text">
+            <string>滚动体</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="IndicatorLight" name="led_gundong2" native="true"/>
+         </item>
+         <item row="5" column="2">
+          <widget class="QLineEdit" name="txt_gundong2frequency"/>
+         </item>
+         <item row="5" column="3">
+          <widget class="QLineEdit" name="txt_gundong2baoluo"/>
+         </item>
+         <item row="5" column="4">
+          <widget class="QLineEdit" name="txt_gundong2pinpu"/>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="gbox_bearing3">
+        <property name="title">
+         <string>GroupBox</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_4">
+         <item row="0" column="0">
+          <widget class="QLabel" name="lab_type3">
+           <property name="text">
+            <string>故障类型</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="lab_result3">
+           <property name="text">
+            <string>诊断结果</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="lab_frequency3">
+           <property name="text">
+            <string>故障频率</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QLabel" name="lab_baoluodb3">
+           <property name="text">
+            <string>包络各阶DB值</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="4">
+          <widget class="QLabel" name="lab_pinpudb3">
+           <property name="text">
+            <string>频谱各阶DB值</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="lab_baowai3">
+           <property name="text">
+            <string>保外</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="IndicatorLight" name="led_baowai3" native="true"/>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLineEdit" name="txt_baowai3frequency"/>
+         </item>
+         <item row="1" column="3">
+          <widget class="QLineEdit" name="txt_baowai3baoluo"/>
+         </item>
+         <item row="1" column="4">
+          <widget class="QLineEdit" name="txt_baowai3pinpu"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="lab_baonei3">
+           <property name="text">
+            <string>保内</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="IndicatorLight" name="led_baonei3" native="true"/>
+         </item>
+         <item row="2" column="2">
+          <widget class="QLineEdit" name="txt_baonei3frequency"/>
+         </item>
+         <item row="2" column="3">
+          <widget class="QLineEdit" name="txt_baonei3baoluo"/>
+         </item>
+         <item row="2" column="4">
+          <widget class="QLineEdit" name="txt_baonei3pinpu"/>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="lab_waihuan3">
+           <property name="text">
+            <string>外环</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="IndicatorLight" name="led_waihuan3" native="true"/>
+         </item>
+         <item row="3" column="2">
+          <widget class="QLineEdit" name="txt_waihuan3frequency"/>
+         </item>
+         <item row="3" column="3">
+          <widget class="QLineEdit" name="txt_waihuan3baoluo"/>
+         </item>
+         <item row="3" column="4">
+          <widget class="QLineEdit" name="txt_waihuan3pinpu"/>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="lab_neihuan3">
+           <property name="text">
+            <string>内环</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="IndicatorLight" name="led_neihuan3" native="true"/>
+         </item>
+         <item row="4" column="2">
+          <widget class="QLineEdit" name="txt_neihuan3frequency"/>
+         </item>
+         <item row="4" column="3">
+          <widget class="QLineEdit" name="txt_neihuan3baoluo"/>
+         </item>
+         <item row="4" column="4">
+          <widget class="QLineEdit" name="txt_neihuan3pinpu"/>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="lab_gundong3">
+           <property name="text">
+            <string>滚动体</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="IndicatorLight" name="led_gundong3" native="true"/>
+         </item>
+         <item row="5" column="2">
+          <widget class="QLineEdit" name="txt_gundong3frequency"/>
+         </item>
+         <item row="5" column="3">
+          <widget class="QLineEdit" name="txt_gundong3baoluo"/>
+         </item>
+         <item row="5" column="4">
+          <widget class="QLineEdit" name="txt_gundong3pinpu"/>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="gbox_bearing4">
+        <property name="title">
+         <string>GroupBox</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_5">
+         <item row="0" column="0">
+          <widget class="QLabel" name="lab_type4">
+           <property name="text">
+            <string>故障类型</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="lab_result4">
+           <property name="text">
+            <string>诊断结果</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="lab_frequency4">
+           <property name="text">
+            <string>故障频率</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QLabel" name="lab_baoluodb4">
+           <property name="text">
+            <string>包络各阶DB值</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="4">
+          <widget class="QLabel" name="lab_pinpudb4">
+           <property name="text">
+            <string>频谱各阶DB值</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="lab_baowai4">
+           <property name="text">
+            <string>保外</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="IndicatorLight" name="led_baowai4" native="true"/>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLineEdit" name="txt_baowai4frequency"/>
+         </item>
+         <item row="1" column="3">
+          <widget class="QLineEdit" name="txt_baowai4baoluo"/>
+         </item>
+         <item row="1" column="4">
+          <widget class="QLineEdit" name="txt_baowai4pinpu"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="lab_baonei4">
+           <property name="text">
+            <string>保内</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="IndicatorLight" name="led_baonei4" native="true"/>
+         </item>
+         <item row="2" column="2">
+          <widget class="QLineEdit" name="txt_baonei4frequency"/>
+         </item>
+         <item row="2" column="3">
+          <widget class="QLineEdit" name="txt_baonei4baoluo"/>
+         </item>
+         <item row="2" column="4">
+          <widget class="QLineEdit" name="txt_baonei4pinpu"/>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="lab_waihuan4">
+           <property name="text">
+            <string>外环</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="IndicatorLight" name="led_waihuan4" native="true"/>
+         </item>
+         <item row="3" column="2">
+          <widget class="QLineEdit" name="txt_waihuan4frequency"/>
+         </item>
+         <item row="3" column="3">
+          <widget class="QLineEdit" name="txt_waihuan4baoluo"/>
+         </item>
+         <item row="3" column="4">
+          <widget class="QLineEdit" name="txt_waihuan4pinpu"/>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="lab_neihuan4">
+           <property name="text">
+            <string>内环</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="IndicatorLight" name="led_neihuan4" native="true"/>
+         </item>
+         <item row="4" column="2">
+          <widget class="QLineEdit" name="txt_neihuan4frequency"/>
+         </item>
+         <item row="4" column="3">
+          <widget class="QLineEdit" name="txt_neihuan4baoluo"/>
+         </item>
+         <item row="4" column="4">
+          <widget class="QLineEdit" name="txt_neihuan4pinpu"/>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="lab_gundong4">
+           <property name="text">
+            <string>滚动体</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="IndicatorLight" name="led_gundong4" native="true"/>
+         </item>
+         <item row="5" column="2">
+          <widget class="QLineEdit" name="txt_gundong4frequency"/>
+         </item>
+         <item row="5" column="3">
+          <widget class="QLineEdit" name="txt_gundong4baoluo"/>
+         </item>
+         <item row="5" column="4">
+          <widget class="QLineEdit" name="txt_gundong4pinpu"/>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox_5">
+        <property name="title">
+         <string>其他</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_6">
+         <item row="0" column="2">
+          <widget class="QLabel" name="lab_frequency5">
+           <property name="text">
+            <string>故障频率</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2">
+          <widget class="QLineEdit" name="txt_congdongfrequency"/>
+         </item>
+         <item row="3" column="3">
+          <widget class="QLineEdit" name="txt_congdongdb"/>
+         </item>
+         <item row="3" column="1">
+          <widget class="IndicatorLight" name="led_congdong" native="true"/>
+         </item>
+         <item row="4" column="3">
+          <widget class="QLineEdit" name="txt_zhudongdb"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="lab_niehe">
+           <property name="text">
+            <string>齿轮啮合频率</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="lab_zhudong">
+           <property name="text">
+            <string>主动齿轮</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="lab_type5">
+           <property name="text">
+            <string>故障类型</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="IndicatorLight" name="led_zhudong" native="true"/>
+         </item>
+         <item row="2" column="1">
+          <widget class="IndicatorLight" name="led_niehe" native="true"/>
+         </item>
+         <item row="1" column="1">
+          <widget class="IndicatorLight" name="led_tamian" native="true"/>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="lab_result5">
+           <property name="text">
+            <string>诊断结果</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="3">
+          <widget class="QLineEdit" name="txt_niehedb"/>
+         </item>
+         <item row="0" column="3">
+          <widget class="QLabel" name="lab_otherdb">
+           <property name="text">
+            <string>各阶DB值</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="lab_tamian">
+           <property name="text">
+            <string>踏面</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QLineEdit" name="txt_tamiandb"/>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="lab_congdong">
+           <property name="text">
+            <string>从动齿轮</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLineEdit" name="txt_tamianfrequency"/>
+         </item>
+         <item row="2" column="2">
+          <widget class="QLineEdit" name="txt_niehefrequency"/>
+         </item>
+         <item row="4" column="2">
+          <widget class="QLineEdit" name="txt_zhudongfrequency"/>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QWidget" name="widget_count" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="lab_allcount">
+        <property name="text">
+         <string>总文件数量：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="txt_allcount">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lab_normalcount">
+        <property name="text">
+         <string>无报警数量：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="txt_normalcount"/>
+      </item>
+      <item>
+       <widget class="QLabel" name="lab_waringcount">
+        <property name="text">
+         <string>预警数量：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="txt_waringcount"/>
+      </item>
+      <item>
+       <widget class="QLabel" name="lab_alarm1count">
+        <property name="text">
+         <string>一级报警数量：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="txt_alarm1count"/>
+      </item>
+      <item>
+       <widget class="QLabel" name="lab_alarm2count">
+        <property name="text">
+         <string>二级报警数量：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="txt_alarm2count"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>IndicatorLight</class>
+   <extends>QWidget</extends>
+   <header location="global">indicatorlight.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

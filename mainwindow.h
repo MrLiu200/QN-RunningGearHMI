@@ -100,6 +100,8 @@ private slots:
     void importSQL();
     //离线数据导入
     void importOriginData();
+    //打开对比结果视图
+    void OpenComparisonView();
     //离线数据导入结果返回
     void ImportOriginDataResult(bool ok);
     //获取测点最新状态

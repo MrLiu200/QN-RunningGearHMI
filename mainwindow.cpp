@@ -30,6 +30,7 @@
 #include "datadownload.h"
 #include "frmrmconfig.h"
 #include "frmrmmeasurepoint.h"
+#include "frmalgorithmoffline.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -79,6 +80,7 @@ void MainWindow::InitFrom()
     QAction *importConfigAction = OfflineDataMenu->addAction(QIcon(":/image/image/Icon/newconfig.ico"),"配置导入");
     QAction *importSqlDbAction = OfflineDataMenu->addAction(QIcon(":/image/image/Icon/newdatabase.ico"),"数据库导入");
     QAction *importDataAction = OfflineDataMenu->addAction("原始数据导入");
+    QAction *DataRunAlgorithm = OfflineDataMenu->addAction("对比数据结果");
 
     QAction *systemAction = configmenu->addAction("本机设置");
     QAction *hostAction = configmenu->addAction("走行部设置");
@@ -156,6 +158,7 @@ void MainWindow::InitFrom()
     connect(importConfigAction,&QAction::triggered,this,&MainWindow::importConfig);
     connect(importSqlDbAction,&QAction::triggered,this,&MainWindow::importSQL);
     connect(importDataAction,&QAction::triggered,this,&MainWindow::importOriginData);
+    connect(DataRunAlgorithm,&QAction::triggered,this,&MainWindow::OpenComparisonView);
 
     connect(mainmenu,&QAction::triggered,this,&MainWindow::TestSLOT);
 
@@ -977,11 +980,11 @@ void MainWindow::TestSLOT()
 //    ui->tabWidget->setAutoFillBackground(true);
     qDebug() << ui->tabWidget->sizeHint();
     //走行部配置界面
-    QString str = "走行部配置";
+    QString str = "测试测试";
     int index = findTabByName(str);
     if(index == -1){
-         FrmRMConfig *RmConfigView = new FrmRMConfig;
-        index = ui->tabWidget->addTab(RmConfigView,str);
+         FrmAlgorithmOffline *testview = new FrmAlgorithmOffline;
+        index = ui->tabWidget->addTab(testview,str);
 
     }
 
@@ -1194,6 +1197,18 @@ void MainWindow::importOriginData()
     frmBlockingInterface::Instance()->SetLabelText("导入中,请稍后……");
     frmBlockingInterface::Instance()->StartShow();
     ImportOfflineFile::Instance()->importData(list);
+}
+
+void MainWindow::OpenComparisonView()
+{
+    QString str = "数据结果对比";
+    int index = findTabByName(str);
+    if(index == -1){
+         FrmAlgorithmOffline *testview = new FrmAlgorithmOffline;
+        index = ui->tabWidget->addTab(testview,str);
+
+    }
+    ui->tabWidget->setCurrentIndex(index);
 }
 
 void MainWindow::ImportOriginDataResult(bool ok)

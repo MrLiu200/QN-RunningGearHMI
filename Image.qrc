@@ -42,6 +42,7 @@
         <file>image/Icon/livedemodulated.png</file>
         <file>image/Icon/pk.png</file>
         <file>image/Icon/download.ico</file>
+        <file>image/Icon/run.png</file>
     </qresource>
     <qresource prefix="/other">
         <file>image/other/help.txt</file>
