@@ -716,6 +716,10 @@ void FrmAlgorithmOffline::on_btn_allrun_clicked()
     }
 #else
     if (QMessageBox::question(this, "全部运行", "确认全部运行？将耗费很长时间") == QMessageBox::Yes) {
+        ui->txt_normalcount->clear();
+        ui->txt_waringcount->clear();
+        ui->txt_alarm1count->clear();
+        ui->txt_alarm2count->clear();
             QtConcurrent::run([this]() {
                 for (int i = 0; i < ui->tableWidget->rowCount(); i++) {
                     QString filename = ui->tableWidget->item(i, 0)->text();

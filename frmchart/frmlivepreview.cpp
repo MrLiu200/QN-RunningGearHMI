@@ -52,6 +52,8 @@ void frmLivePreview::InitDevice()
                 livedeviceinfo.currentecho = UIECHODATA();
                 livedeviceinfo.FileValues = QVector<double>();
                 livedeviceinfo.FileKeys = QVector<double>();
+                livedeviceinfo.highlightValues = QVector<double>();
+                livedeviceinfo.highlightKeys = QVector<double>();
             }
         }
     }
@@ -794,6 +796,10 @@ void frmLivePreview::UpdateTrendChart()
 
     //清空图表
     customPlot->clearGraphs();
+    // 创建图层（确保图层已创建）
+//    if (!customPlot->layer("highlightLayer")) {
+//        customPlot->addLayer("highlightLayer", customPlot->layer("main"), QCustomPlot::limBelow);
+//    }
 
     //添加图表
     customPlot->addGraph();
@@ -808,6 +814,24 @@ void frmLivePreview::UpdateTrendChart()
     graph->setPen(pen);
     graph->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 8));
     graph->setSelectable(QCP::SelectionType::stSingleData);
+
+    //2025-03-28测试,添加到背景层，报警的数据需要高亮
+    QCPGraph *highlightGraph = customPlot->addGraph();
+//    highlightGraph->setLayer("highlightLayer");
+    highlightGraph->setLineStyle(QCPGraph::lsNone); // 取消连线，防止影响点击
+    highlightGraph->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, Qt::red, Qt::red, 10)); // 显示高亮点
+    highlightGraph->setSelectable(QCP::stNone); // 禁止选中
+    highlightGraph->setLayer("background");// 避免点击事件
+
+    QVector<double> highlightX, highlightY;
+    for (int i = 0; i < livedeviceinfo.FileKeys.size() / 2; i++)
+    {
+        highlightY.append(livedeviceinfo.FileValues.at(i) + 100);
+        highlightX.append(livedeviceinfo.FileKeys.at(i));
+    }
+
+    highlightGraph->setData(livedeviceinfo.highlightKeys, livedeviceinfo.highlightValues);
+    //测试结束
 
     customPlot->rescaleAxes();
     customPlot->replot();
@@ -1145,11 +1169,18 @@ void frmLivePreview::UpdateDimensionChart()
 
 void frmLivePreview::DataImport()
 {
+    //清空数据列表
+    livedeviceinfo.FileValues.clear();
+    livedeviceinfo.FileKeys.clear();
+    livedeviceinfo.filelist.clear();
+    livedeviceinfo.highlightKeys.clear();
+    livedeviceinfo.highlightValues.clear();
+
     DataFileDir = App::DownLoadTempDataDir;
     QDir dir(App::DownLoadTempDataDir);
     // 查找符合条件的文件
     QStringList filters;
-    filters << "*.bin"; // 查找所有 .bin 文件
+    filters << "vib*.bin"; // 查找所有 .bin 文件
     dir.setNameFilters(filters);
     dir.setFilter(QDir::Files);
     QFileInfoList files = dir.entryInfoList();
@@ -1171,6 +1202,7 @@ void frmLivePreview::DataImport()
         if((filewagon == livedeviceinfo.wagon) && (fileID == livedeviceinfo.id) && (fileCH == livedeviceinfo.ch) &&
                 (time < endtime) && (time > starttime)){
             livedeviceinfo.filelist.append(fileInfo.absoluteFilePath());
+
             //查找数据库中的峰峰值，如果存在的话，如果没有数据库连接或者没数据则随机生成一个值
             double value = generator.bounded(5.00);  // 默认值
             if (M_DbAPI::Instance()->GetDataConnectState()) {
@@ -1190,10 +1222,29 @@ void frmLivePreview::DataImport()
                     value = query.value(0).toDouble();  // 仅在查询成功且有数据时更新值
                 }
             }
+
             livedeviceinfo.FileValues.append(value);
             QDateTime epochDateTime = QDateTime::fromString("2024-01-01 00:00:00", "yyyy-MM-dd HH:mm:ss");
             qint64 key = time.toSecsSinceEpoch();
             livedeviceinfo.FileKeys.append(key);
+
+            //查询数据库中是否存在该文件的报警信息，如果存在，则需要添加到高亮队列
+            if (M_DbAPI::Instance()->GetDataConnectState()){
+                QString sqlstr = "SELECT AlarmGrade FROM LogInfo WHERE "
+                                 "TriggerTime = :triggertime AND WagonNumber = :wagonNumber "
+                                 "AND DeviceID = :deviceID AND DeviceCH = :deviceCH "
+                                 "AND LogType = '报警信息'";
+                QSqlQuery query(M_DbAPI::Instance()->GetDataDBHandle());
+                query.prepare(sqlstr);
+                query.bindValue(":triggertime", time.toString("yyyy-MM-dd HH:mm:ss"));
+                query.bindValue(":deviceID", fileID);
+                query.bindValue(":deviceCH", fileCH);
+                query.bindValue(":wagonNumber", filewagon);
+                if (query.exec() && query.next()) {//如果查询成功则表示有报警信息，需要添加到高亮队列
+                    livedeviceinfo.highlightKeys.append(key);
+                    livedeviceinfo.highlightValues.append(value);
+                }
+            }
         }
     }
 

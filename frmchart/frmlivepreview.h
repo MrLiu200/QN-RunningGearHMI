@@ -36,6 +36,8 @@ typedef struct LIVEDEVICEINFO{
     UIECHODATA currentecho;
     QVector<double> FileValues;
     QVector<double> FileKeys;
+    QVector<double> highlightValues;
+    QVector<double> highlightKeys;
 }LIVEDEVICEINFO;
 class frmLivePreview : public QWidget
 {
