@@ -171,7 +171,9 @@ bool frmRealTimeDebug::InFilterList(QString wagon, qint8 id, qint8 ch, bool temm
     return false;
 }
 
-void frmRealTimeDebug::ReturnEigenvalue(QString Wagon, qint8 id, qint8 ch, quint32 speed, double AmbientTem, double PointTem, QString time, QStringList Dimensional, QStringList Demodulated, QStringList alarmlist)
+void frmRealTimeDebug::ReturnEigenvalue(QString Wagon, qint8 id, qint8 ch, quint32 speed, double AmbientTem, double PointTem,
+                                        QString time, QStringList Dimensional, QStringList Demodulated, QStringList alarmlist,
+                                        quint8 rmsalarmgrade, quint8 ppalarmgrade)
 {
     if(pauseecho) return;
     if(!InFilterList(Wagon,id,ch)) return;
@@ -202,6 +204,12 @@ void frmRealTimeDebug::ReturnEigenvalue(QString Wagon, qint8 id, qint8 ch, quint
             }
             AlarmInfo.append(Contents.at(i) + grade);
         }
+    }
+    if(rmsalarmgrade > 0){
+        AlarmInfo.append(QString("RMS值%1级报警").arg(rmsalarmgrade));
+    }
+    if(ppalarmgrade > 0){
+        AlarmInfo.append(QString("PP值%1级报警").arg(ppalarmgrade));
     }
     UpdateAlarmInfo(AlarmInfo);
 

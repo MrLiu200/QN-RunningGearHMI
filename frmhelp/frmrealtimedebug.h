@@ -38,7 +38,7 @@ private:
     bool InFilterList(QString wagon, qint8 id, qint8 ch, bool temmodel = false);
 private slots:
     void ReturnEigenvalue(QString Wagon, qint8 id, qint8 ch, quint32 speed, double AmbientTem,double PointTem,QString time,
-                          QStringList Dimensional,QStringList Demodulated,QStringList alarmlist);
+                          QStringList Dimensional,QStringList Demodulated,QStringList alarmlist,quint8 rmsalarmgrade, quint8 ppalarmgrade);
     void RealtimeSpeedUpdate(quint32 speed);
     //温度巡检返回
     void ReturnTemValue(QString Wagon, qint8 id,QString time,qint8 ChannelCount,QStringList State);

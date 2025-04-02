@@ -32,6 +32,7 @@ public:
         QString name;
         QString type;
         float sensitivity;
+        int AxisPosition;
         float shaftDiameter;
         QString bearing1_name;
         QString bearing1_model;

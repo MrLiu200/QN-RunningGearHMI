@@ -27,11 +27,11 @@ void FrmRMMeasurePoint::InitTable()
     columnNames.clear();
     columnWidths.clear();
 
-    columnNames << "前置ID" << "通道号" << "测点名称" << "测点类型" << "灵敏度" << "轴径" << "轴承1名称"
+    columnNames << "前置ID" << "通道号" << "测点名称" << "测点类型" << "灵敏度" << "轴位" << "轴径" << "轴承1名称"
                 << "轴承1型号" << "轴承2名称" << "轴承2型号" << "轴承3名称" << "轴承3型号"
                 << "轴承4名称" << "轴承4型号" << "从动轮名称" << "从动轮齿数" << "主动轮名称"
                 << "主动轮齿数" << "软件版本" << "是否使能";
-    columnWidths << 50 << 50 << 80 << 80 << 50 << 50 << 120 << 120
+    columnWidths << 50 << 50 << 80 << 80 << 50 << 50 << 50 << 120 << 120
                  << 120 << 120 << 120 << 120 << 120 << 120 << 120 << 80
                  << 120 << 80 << 80 << 50;
 //    columnWidths << 70 << 70 << 90 << 120 << 70 << 50 << 90 << 150
@@ -56,21 +56,22 @@ void FrmRMMeasurePoint::InitTable()
         model->setItem(i, 2, new QStandardItem(device.name));
         model->setItem(i, 3, new QStandardItem(device.type));
         model->setItem(i, 4, new QStandardItem(QString::number(device.sensitivity)));
-        model->setItem(i, 5, new QStandardItem(QString::number(device.shaftDiameter)));
-        model->setItem(i, 6, new QStandardItem(device.bearing1_name));
-        model->setItem(i, 7, new QStandardItem(device.bearing1_model));
-        model->setItem(i, 8, new QStandardItem(device.bearing2_name));
-        model->setItem(i, 9, new QStandardItem(device.bearing2_model));
-        model->setItem(i, 10, new QStandardItem(device.bearing3_name));
-        model->setItem(i, 11, new QStandardItem(device.bearing3_model));
-        model->setItem(i, 12, new QStandardItem(device.bearing4_name));
-        model->setItem(i, 13, new QStandardItem(device.bearing4_model));
-        model->setItem(i, 14, new QStandardItem(device.capstanname));
-        model->setItem(i, 15, new QStandardItem(QString::number(device.capstanTeethNum)));
-        model->setItem(i, 16, new QStandardItem(device.drivenwheelName));
-        model->setItem(i, 17, new QStandardItem(QString::number(device.drivenwheelTeethNum)));
-        model->setItem(i, 18, new QStandardItem(device.version));
-        model->setItem(i, 19, new QStandardItem(device.IsEnable ? "Enabled" : "Disabled"));
+        model->setItem(i, 5, new QStandardItem(QString::number(device.AxisPosition)));
+        model->setItem(i, 6, new QStandardItem(QString::number(device.shaftDiameter)));
+        model->setItem(i, 7, new QStandardItem(device.bearing1_name));
+        model->setItem(i, 8, new QStandardItem(device.bearing1_model));
+        model->setItem(i, 9, new QStandardItem(device.bearing2_name));
+        model->setItem(i, 10, new QStandardItem(device.bearing2_model));
+        model->setItem(i, 11, new QStandardItem(device.bearing3_name));
+        model->setItem(i, 12, new QStandardItem(device.bearing3_model));
+        model->setItem(i, 13, new QStandardItem(device.bearing4_name));
+        model->setItem(i, 14, new QStandardItem(device.bearing4_model));
+        model->setItem(i, 15, new QStandardItem(device.capstanname));
+        model->setItem(i, 16, new QStandardItem(QString::number(device.capstanTeethNum)));
+        model->setItem(i, 17, new QStandardItem(device.drivenwheelName));
+        model->setItem(i, 18, new QStandardItem(QString::number(device.drivenwheelTeethNum)));
+        model->setItem(i, 19, new QStandardItem(device.version));
+        model->setItem(i, 20, new QStandardItem(device.IsEnable ? "Enabled" : "Disabled"));
     }
     ui->tablemain->setModel(model);
     for(int i=0;i<columnNames.size();i++){
@@ -95,8 +96,12 @@ void FrmRMMeasurePoint::InitTable()
     ui->tablemain->setItemDelegateForColumn(1, new ColumnDelegate(ColumnDelegate::Delegate_ComboBox, chlist, this));
     //测点类型委托
     QStringList pointtypelist;
-    pointtypelist << "轴箱" << "电机传动端" << "电机非传动端" << "齿轮箱";
+    pointtypelist << "1侧轴箱" << "2侧轴箱" << "电机传动端" << "电机非传动端" << "齿轮箱";
     ui->tablemain->setItemDelegateForColumn(3, new ColumnDelegate(ColumnDelegate::Delegate_ComboBox, pointtypelist, this));
+    //轴位委托
+    QStringList axislist = {"1","2","3","4"};
+    ui->tablemain->setItemDelegateForColumn(5,new ColumnDelegate(ColumnDelegate::Delegate_ComboBox, axislist, this));
+
     //轴承委托
     QStringList BearingList;
     for(int i=0;i<PreData::bearinglist.size();i++){
@@ -104,15 +109,15 @@ void FrmRMMeasurePoint::InitTable()
             BearingList.append(PreData::bearinglist.at(i).Model);
         }
     }
-    ui->tablemain->setItemDelegateForColumn(7, new ColumnDelegate(ColumnDelegate::Delegate_ComboBox, BearingList, this));
-    ui->tablemain->setItemDelegateForColumn(9, new ColumnDelegate(ColumnDelegate::Delegate_ComboBox, BearingList, this));
-    ui->tablemain->setItemDelegateForColumn(11, new ColumnDelegate(ColumnDelegate::Delegate_ComboBox, BearingList, this));
-    ui->tablemain->setItemDelegateForColumn(13, new ColumnDelegate(ColumnDelegate::Delegate_ComboBox, BearingList, this));
+    ui->tablemain->setItemDelegateForColumn(8, new ColumnDelegate(ColumnDelegate::Delegate_ComboBox, BearingList, this));
+    ui->tablemain->setItemDelegateForColumn(10, new ColumnDelegate(ColumnDelegate::Delegate_ComboBox, BearingList, this));
+    ui->tablemain->setItemDelegateForColumn(12, new ColumnDelegate(ColumnDelegate::Delegate_ComboBox, BearingList, this));
+    ui->tablemain->setItemDelegateForColumn(14, new ColumnDelegate(ColumnDelegate::Delegate_ComboBox, BearingList, this));
 
     //使能开关
     QStringList enablelist;
     enablelist << "Disable" << "Enable";
-    ui->tablemain->setItemDelegateForColumn(19, new ColumnDelegate(ColumnDelegate::Delegate_ComboBox, enablelist, this));
+    ui->tablemain->setItemDelegateForColumn(20, new ColumnDelegate(ColumnDelegate::Delegate_ComboBox, enablelist, this));
 
     connect(model,&QStandardItemModel::dataChanged,this,&FrmRMMeasurePoint::DataChange);
 }
@@ -141,21 +146,22 @@ void FrmRMMeasurePoint::RefreshData()
         model->setItem(i, 2, new QStandardItem(device.name));
         model->setItem(i, 3, new QStandardItem(device.type));
         model->setItem(i, 4, new QStandardItem(QString::number(device.sensitivity)));
-        model->setItem(i, 5, new QStandardItem(QString::number(device.shaftDiameter)));
-        model->setItem(i, 6, new QStandardItem(device.bearing1_name));
-        model->setItem(i, 7, new QStandardItem(device.bearing1_model));
-        model->setItem(i, 8, new QStandardItem(device.bearing2_name));
-        model->setItem(i, 9, new QStandardItem(device.bearing2_model));
-        model->setItem(i, 10, new QStandardItem(device.bearing3_name));
-        model->setItem(i, 11, new QStandardItem(device.bearing3_model));
-        model->setItem(i, 12, new QStandardItem(device.bearing4_name));
-        model->setItem(i, 13, new QStandardItem(device.bearing4_model));
-        model->setItem(i, 14, new QStandardItem(device.capstanname));
-        model->setItem(i, 15, new QStandardItem(QString::number(device.capstanTeethNum)));
-        model->setItem(i, 16, new QStandardItem(device.drivenwheelName));
-        model->setItem(i, 17, new QStandardItem(QString::number(device.drivenwheelTeethNum)));
-        model->setItem(i, 18, new QStandardItem(device.version));
-        model->setItem(i, 19, new QStandardItem(device.IsEnable ? "Enabled" : "Disabled"));
+        model->setItem(i, 5, new QStandardItem(QString::number(device.AxisPosition)));
+        model->setItem(i, 6, new QStandardItem(QString::number(device.shaftDiameter)));
+        model->setItem(i, 7, new QStandardItem(device.bearing1_name));
+        model->setItem(i, 8, new QStandardItem(device.bearing1_model));
+        model->setItem(i, 9, new QStandardItem(device.bearing2_name));
+        model->setItem(i, 10, new QStandardItem(device.bearing2_model));
+        model->setItem(i, 11, new QStandardItem(device.bearing3_name));
+        model->setItem(i, 12, new QStandardItem(device.bearing3_model));
+        model->setItem(i, 13, new QStandardItem(device.bearing4_name));
+        model->setItem(i, 14, new QStandardItem(device.bearing4_model));
+        model->setItem(i, 15, new QStandardItem(device.capstanname));
+        model->setItem(i, 16, new QStandardItem(QString::number(device.capstanTeethNum)));
+        model->setItem(i, 17, new QStandardItem(device.drivenwheelName));
+        model->setItem(i, 18, new QStandardItem(QString::number(device.drivenwheelTeethNum)));
+        model->setItem(i, 19, new QStandardItem(device.version));
+        model->setItem(i, 20, new QStandardItem(device.IsEnable ? "Enabled" : "Disabled"));
     }
     connect(model,&QStandardItemModel::dataChanged,this,&FrmRMMeasurePoint::DataChange);
 }
@@ -241,6 +247,7 @@ void FrmRMMeasurePoint::on_btn_add_clicked()
     QString name = "ID1CH1";
     QString type = "轴箱";
     double sensitivity = 10;
+    int axisposition = 1;
     double shaftDiameter = 10;
     QString bearing1_name = "轴承1";
     QString bearing1_model = "QN-Null";
@@ -284,21 +291,22 @@ void FrmRMMeasurePoint::on_btn_add_clicked()
     model->setData(model->index(count, 2), name);
     model->setData(model->index(count, 3), type, Qt::EditRole);
     model->setData(model->index(count, 4), QString::number(sensitivity));
-    model->setData(model->index(count, 5), QString::number(shaftDiameter));
-    model->setData(model->index(count, 6), bearing1_name);
-    model->setData(model->index(count, 7), bearing1_model, Qt::EditRole);
-    model->setData(model->index(count, 8), bearing2_name);
-    model->setData(model->index(count, 9), bearing2_model, Qt::EditRole);
-    model->setData(model->index(count, 10), bearing3_name);
-    model->setData(model->index(count, 11), bearing3_model, Qt::EditRole);
-    model->setData(model->index(count, 12), bearing4_name);
-    model->setData(model->index(count, 13), bearing4_model, Qt::EditRole);
-    model->setData(model->index(count, 14), capstanname);
-    model->setData(model->index(count, 15), QString::number(capstanTeethNum));
-    model->setData(model->index(count, 16), drivenwheelName);
-    model->setData(model->index(count, 17), QString::number(drivenwheelTeethNum));
-    model->setData(model->index(count, 18), version);
-    model->setData(model->index(count, 19), IsEnable ? "Enabled" : "Disabled", Qt::EditRole);
+    model->setData(model->index(count, 5), QString::number(axisposition));
+    model->setData(model->index(count, 6), QString::number(shaftDiameter));
+    model->setData(model->index(count, 7), bearing1_name);
+    model->setData(model->index(count, 8), bearing1_model, Qt::EditRole);
+    model->setData(model->index(count, 9), bearing2_name);
+    model->setData(model->index(count, 10), bearing2_model, Qt::EditRole);
+    model->setData(model->index(count, 11), bearing3_name);
+    model->setData(model->index(count, 12), bearing3_model, Qt::EditRole);
+    model->setData(model->index(count, 13), bearing4_name);
+    model->setData(model->index(count, 14), bearing4_model, Qt::EditRole);
+    model->setData(model->index(count, 15), capstanname);
+    model->setData(model->index(count, 16), QString::number(capstanTeethNum));
+    model->setData(model->index(count, 17), drivenwheelName);
+    model->setData(model->index(count, 18), QString::number(drivenwheelTeethNum));
+    model->setData(model->index(count, 19), version);
+    model->setData(model->index(count, 20), IsEnable ? "Enabled" : "Disabled", Qt::EditRole);
 }
 
 void FrmRMMeasurePoint::on_btn_delete_clicked()
@@ -343,27 +351,27 @@ void FrmRMMeasurePoint::on_btn_setsametype_clicked()
         msgBox.show();
         //获取其他信息
         double sensitivity = model->data(model->index(currentrow,4)).toDouble();
-        double shaftDiameter = model->data(model->index(currentrow,5)).toDouble();
+        double shaftDiameter = model->data(model->index(currentrow,6)).toDouble();
 
         QString bearing1_model = model->data(model->index(currentrow,7), Qt::EditRole).toString();
-        QString bearing2_model = model->data(model->index(currentrow,9), Qt::EditRole).toString();
-        QString bearing3_model = model->data(model->index(currentrow,11), Qt::EditRole).toString();
-        QString bearing4_model = model->data(model->index(currentrow,13), Qt::EditRole).toString();
+        QString bearing2_model = model->data(model->index(currentrow,10), Qt::EditRole).toString();
+        QString bearing3_model = model->data(model->index(currentrow,12), Qt::EditRole).toString();
+        QString bearing4_model = model->data(model->index(currentrow,14), Qt::EditRole).toString();
         int capstanTeethNum = model->data(model->index(currentrow,15)).toInt();
-        int drivenwheelTeethNum = model->data(model->index(currentrow,17)).toInt();
+        int drivenwheelTeethNum = model->data(model->index(currentrow,18)).toInt();
 
         //应用至同类型
         for (int row = 0; row < model->rowCount(); ++row)
         {
             if(model->data(model->index(row,3)).toString() == type){
                 model->setData(model->index(row,4),sensitivity);
-                model->setData(model->index(row,5),shaftDiameter);
-                model->setData(model->index(row,7),bearing1_model, Qt::EditRole);
-                model->setData(model->index(row,8),bearing2_model, Qt::EditRole);
-                model->setData(model->index(row,11),bearing3_model, Qt::EditRole);
-                model->setData(model->index(row,13),bearing4_model, Qt::EditRole);
-                model->setData(model->index(row,14),capstanTeethNum);
-                model->setData(model->index(row,17),drivenwheelTeethNum);
+                model->setData(model->index(row,6),shaftDiameter);
+                model->setData(model->index(row,8),bearing1_model, Qt::EditRole);
+                model->setData(model->index(row,10),bearing2_model, Qt::EditRole);
+                model->setData(model->index(row,12),bearing3_model, Qt::EditRole);
+                model->setData(model->index(row,14),bearing4_model, Qt::EditRole);
+                model->setData(model->index(row,15),capstanTeethNum);
+                model->setData(model->index(row,18),drivenwheelTeethNum);
             }
         }
         msgBox.close();
@@ -388,26 +396,26 @@ void FrmRMMeasurePoint::on_btn_setall_clicked()
 
         //获取其他信息
         double sensitivity = model->data(model->index(currentrow,4)).toDouble();
-        double shaftDiameter = model->data(model->index(currentrow,5)).toDouble();
+        double shaftDiameter = model->data(model->index(currentrow,6)).toDouble();
 
-        QString bearing1_model = model->data(model->index(currentrow,7), Qt::EditRole).toString();
-        QString bearing2_model = model->data(model->index(currentrow,9), Qt::EditRole).toString();
-        QString bearing3_model = model->data(model->index(currentrow,11), Qt::EditRole).toString();
-        QString bearing4_model = model->data(model->index(currentrow,13), Qt::EditRole).toString();
-        int capstanTeethNum = model->data(model->index(currentrow,15)).toInt();
-        int drivenwheelTeethNum = model->data(model->index(currentrow,17)).toInt();
+        QString bearing1_model = model->data(model->index(currentrow,8), Qt::EditRole).toString();
+        QString bearing2_model = model->data(model->index(currentrow,10), Qt::EditRole).toString();
+        QString bearing3_model = model->data(model->index(currentrow,12), Qt::EditRole).toString();
+        QString bearing4_model = model->data(model->index(currentrow,14), Qt::EditRole).toString();
+        int capstanTeethNum = model->data(model->index(currentrow,16)).toInt();
+        int drivenwheelTeethNum = model->data(model->index(currentrow,18)).toInt();
 
         //应用至所有类型
         for (int row = 0; row < model->rowCount(); ++row)
         {
             model->setData(model->index(row,4),sensitivity);
-            model->setData(model->index(row,5),shaftDiameter);
-            model->setData(model->index(row,7),bearing1_model, Qt::EditRole);
-            model->setData(model->index(row,8),bearing2_model, Qt::EditRole);
-            model->setData(model->index(row,11),bearing3_model, Qt::EditRole);
-            model->setData(model->index(row,13),bearing4_model, Qt::EditRole);
-            model->setData(model->index(row,14),capstanTeethNum);
-            model->setData(model->index(row,17),drivenwheelTeethNum);
+            model->setData(model->index(row,6),shaftDiameter);
+            model->setData(model->index(row,8),bearing1_model, Qt::EditRole);
+            model->setData(model->index(row,10),bearing2_model, Qt::EditRole);
+            model->setData(model->index(row,12),bearing3_model, Qt::EditRole);
+            model->setData(model->index(row,14),bearing4_model, Qt::EditRole);
+            model->setData(model->index(row,15),capstanTeethNum);
+            model->setData(model->index(row,18),drivenwheelTeethNum);
         }
         msgBox.close();
     }
@@ -443,6 +451,7 @@ void FrmRMMeasurePoint::on_btn_save_clicked()
     for(int row = 0;row < model->rowCount(); ++row){
         rowlist.clear();
         bool validRow = true;
+        qDebug()<<model->columnCount() << model->rowCount();
         for(int col = 0; col < model->columnCount(); ++col){
             QVariant value = model->data(model->index(row, col), Qt::EditRole);
 
@@ -451,9 +460,10 @@ void FrmRMMeasurePoint::on_btn_save_clicked()
                 validRow = false;  // 处理方式：跳过整行
                 break;
             }
-            rowlist.append(value.toString());
+//            rowlist.append(value.toString());
 
-            QString date = model->data(model->index(row,col),Qt::EditRole).toString();
+//            QString date = model->data(model->index(row,col),Qt::EditRole).toString();
+            QString date = value.toString();
             if(col == model->columnCount()-1){
                 rowlist.append(date == "Enable" ? "1" : "0");
             }else{

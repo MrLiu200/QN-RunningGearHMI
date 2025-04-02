@@ -264,7 +264,7 @@ void UDPMulticastAPI::TemInspection(QString DataContent)
     for(int i=0;i<ChannelCount;i++){
         Statelist.append(QString::number(ChannelState[i]));
         if(ChannelState[i] > 0){
-            Q_EMIT DeviceAlarm(WagonNum,pre_id,i+1,ChannelState[i]-1,"温度");
+            Q_EMIT DeviceAlarm(WagonNum,pre_id,i+1,ChannelState[i]-1,"温度异常");
         }
     }
     Q_EMIT ReturnTemValue(WagonNum,pre_id,time,ChannelCount,Statelist);
@@ -273,38 +273,67 @@ void UDPMulticastAPI::TemInspection(QString DataContent)
 void UDPMulticastAPI::ComprehensiveInspection(QString DataContent)
 {
     QStringList list = DataContent.split(";");
-    if(list.size() < 11) return;
+    if(list.size() < 15) return;
     QString WagonNum = list.at(0);
     QString time = list.at(1);
     uint8_t pre_id = list.at(2).toInt();
     uint8_t ChannelNum = list.at(3).toInt();
-    uint32_t Speed = list.at(4).toInt();
-    double AmbientTem = list.at(5).toDouble();
-    double pointTem = list.at(6).toDouble();
-    QStringList alarmlist = list.at(8).split("|");
-    QStringList DimensionList = list.at(9).split("|");
-    QStringList DemodulatedList = list.at(10).split("|");
+    QString devicename = list.at(4);
+    int axis = list.at(5).toInt();
+    uint32_t Speed = list.at(6).toInt();
+    double AmbientTem = list.at(7).toDouble();
+    double pointTem = list.at(8).toDouble();
+    QStringList alarmlist = list.at(10).split("|");
+    quint8 rmsAlarmgrade = list.at(11).toInt();
+    quint8 ppAlarmgrade = list.at(12).toInt();
+    QStringList DimensionList = list.at(13).split("|");
+    QStringList DemodulatedList = list.at(14).split("|");
     uint8_t state[9];
-    state[0] = list.at(7).toInt();
+    state[0] = list.at(9).toInt();
     for(int i=0;i<alarmlist.size();i++){
         state[i+1] = alarmlist.at(i).toInt();
     }
 
     //判断状态
+    QStringList logList;
+    int lastgrade = -1;
     QStringList Contents;
     Contents << "温度" << "保外" << "保内" << "外环" << "内环" << "滚单" << "大齿轮" << "小齿轮" << "踏面";
     for(int i=0;i<9;i++){
         if(state[i] != 0xff){//0:预警，1:一级报00警 2:二级报警
-            QString content = Contents.at(i);
-//            qDebug()<<"**********-------------" << content << "-------**********";
-            Q_EMIT DeviceAlarm(WagonNum,pre_id,ChannelNum,state[i],content);
+//            QString content = Contents.at(i);
+//            Q_EMIT DeviceAlarm(WagonNum,pre_id,ChannelNum,state[i],content);
+            QString grade = (state[i] == 0 ? "预警" : QString("%1级").arg(state[i]));
+            logList.append(Contents.at(i) + grade);
+            if(lastgrade < state[i]){
+                lastgrade = state[i];
+            }
         }
     }
+
+    if(rmsAlarmgrade > 0){
+        if(lastgrade < rmsAlarmgrade){
+            lastgrade = rmsAlarmgrade;
+        }
+        logList.append(QString("RMS值 %1 级报警").arg(rmsAlarmgrade));
+    }
+
+    if(ppAlarmgrade > 0){
+        if(lastgrade < ppAlarmgrade){
+            lastgrade = ppAlarmgrade;
+        }
+        logList.append(QString("PP值 %1 级报警").arg(ppAlarmgrade));
+    }
+
+    if(!logList.isEmpty() && (lastgrade != -1)){
+        Q_EMIT DeviceAlarm(WagonNum,pre_id,ChannelNum,lastgrade,logList.join(";"));
+    }
+
     QStringList alarminfo;//仅传给实时界面使用
     for(auto baojing : state){
         alarminfo.append(QString::number(baojing));
     }
-    Q_EMIT ReturnEigenvalue(WagonNum,pre_id,ChannelNum,Speed,AmbientTem,pointTem,time,DimensionList,DemodulatedList,alarminfo);
+    Q_EMIT ReturnEigenvalue(WagonNum,pre_id,ChannelNum,Speed,AmbientTem,pointTem,time,DimensionList,DemodulatedList,alarminfo,rmsAlarmgrade,ppAlarmgrade);
 }
 
 void UDPMulticastAPI::HeartbeatEvent(QString DataContent)
@@ -334,18 +363,20 @@ void UDPMulticastAPI::UpdateSynchronous(QString DataContent)
 void UDPMulticastAPI::BoardStatusEvent(QString DataContent)
 {
     QStringList list = DataContent.split(";");
-    if(list.size() < 6) return;
+    if(list.size() < 7) return;
     QString wagon = list.at(0);
     QString type = list.at(1);
     QString strid = list.at(2);
-//    QString oldContent = list.at(3);
+    QString devicename = list.at(3);
     int state = list.at(4).toInt();
-    QString Time = list.at(5);
-    int id =0,ch =0;
+    QString oldContent = list.at(5);
+    QString Time = list.at(6);
+    int id = 0,ch = 0,axis = -1;
     if(type == "前置"){
         id = strid.split("|").at(0).toInt();
         ch = strid.split("|").at(1).toInt();
-        //查找通道名称
+        axis = strid.split("|").at(2).toInt();
+        //对比名称是否一致，如果不一致，则不处理？
         QString name;
         for(auto device : PreData::devicelist){
             if(device.id == id && device.ch == ch){
@@ -353,7 +384,7 @@ void UDPMulticastAPI::BoardStatusEvent(QString DataContent)
                 break;
             }
         }
-        if(!name.isEmpty()){
+        if(!name.isEmpty() && (name == devicename)){
             Q_EMIT PreStateChange(wagon,name,static_cast<PreData::EnumDeviceState>(state));
         }
     }

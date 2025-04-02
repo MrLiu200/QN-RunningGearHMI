@@ -311,6 +311,7 @@ void MainWindow::UpdateItem(QString wagon, QString name, PreData::EnumDeviceStat
 
                 if(!tip.isEmpty()){//报警信息
                     QString oldtip = list.at(5);
+#if 0
                     QString newtip;
                     if(oldtip != "无报警"){
                         newtip = oldtip + tip;
@@ -318,6 +319,9 @@ void MainWindow::UpdateItem(QString wagon, QString name, PreData::EnumDeviceStat
                         newtip = tip;
                     }
                     list[5] = newtip;
+#else
+                    list[5] = tip;
+#endif
                 }
                 item->setToolTip(list.join("\n"));
             }
@@ -414,7 +418,8 @@ void MainWindow::DeviceAlarm(QString wagon, int id, int ch, quint8 grade, QStrin
             //如果设备掉线，则不处理，对吧？
             if(device.state != PreData::DeviceState_Offline){
                 PreData::devicelist[i].state = state;
-                tips = QString("%1%2").arg(alarmtype).arg(alarmstr);
+//                tips = QString("%1%2").arg(alarmtype).arg(alarmstr);
+                tips = alarmtype;
             }else{
                 return;
             }

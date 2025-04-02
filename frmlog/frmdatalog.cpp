@@ -100,9 +100,9 @@ void frmDataLog::on_btnExcel_clicked()
 
     int columnCount = query.record().count();
     QList<QString> columnNames;
-    columnNames << "车号" << "车厢号" << "设备ID" << "设备通道" << "设备名称" << "日志类型" << "报警等级" << "触发时间" << "描述";
+    columnNames << "车号" << "车厢号" << "设备ID" << "设备通道" << "轴位编号"<< "设备名称" << "日志类型" << "报警等级" << "触发时间" << "描述";
     QList<int> columnwidths;
-    columnwidths << 20 << 20 << 15 << 15 << 20 << 20 << 15 << 20 << 50;
+    columnwidths << 20 << 20 << 15 << 15 << 15 << 20 << 20 << 15 << 20 << 50;
 
     QXlsx::Document xlsx;
 
@@ -204,11 +204,12 @@ void frmDataLog::loadPage(int pageNumber, int pageSize)
         model->setHeaderData(1, Qt::Horizontal, "车厢号");
         model->setHeaderData(2, Qt::Horizontal, "设备ID");
         model->setHeaderData(3, Qt::Horizontal, "设备通道");
-        model->setHeaderData(4, Qt::Horizontal, "设备名称");
-        model->setHeaderData(5, Qt::Horizontal, "日志类型");
-        model->setHeaderData(6, Qt::Horizontal, "报警等级");
-        model->setHeaderData(7, Qt::Horizontal, "时间");
-        model->setHeaderData(8, Qt::Horizontal, "描述");
+        model->setHeaderData(4, Qt::Horizontal, "轴位编号");
+        model->setHeaderData(5, Qt::Horizontal, "设备名称");
+        model->setHeaderData(6, Qt::Horizontal, "日志类型");
+        model->setHeaderData(7, Qt::Horizontal, "报警等级");
+        model->setHeaderData(8, Qt::Horizontal, "时间");
+        model->setHeaderData(9, Qt::Horizontal, "描述");
 
     ui->tableMain->setModel(model);
     ui->tableMain->horizontalHeader()->setStretchLastSection(true);

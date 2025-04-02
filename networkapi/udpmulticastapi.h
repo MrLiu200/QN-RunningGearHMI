@@ -236,7 +236,7 @@ signals:
     //以下为实时显示界面所需信号
     //量纲值返回
     void ReturnEigenvalue(QString Wagon, qint8 id, qint8 ch, quint32 speed, double AmbientTem,double PointTem,QString time,
-                          QStringList Dimensional,QStringList Demodulated,QStringList alarmlist);
+                          QStringList Dimensional,QStringList Demodulated,QStringList alarmlist,quint8 rmsalarmgrade, quint8 ppalarmgrade);
     //实时转速更新
     void RealtimeSpeedUpdate(quint32 speed);
 
