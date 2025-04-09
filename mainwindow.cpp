@@ -31,6 +31,7 @@
 #include "frmrmconfig.h"
 #include "frmrmmeasurepoint.h"
 #include "frmalgorithmoffline.h"
+#include "frmpdfwidget.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -982,8 +983,7 @@ void MainWindow::TestSLOT()
     //设备模拟报警
     DeviceAlarm("QN-t0021", 2, 1, 2, "保外");
 #endif
-//    ui->tabWidget->setAutoFillBackground(true);
-    qDebug() << ui->tabWidget->sizeHint();
+#if 0
     //走行部配置界面
     QString str = "测试测试";
     int index = findTabByName(str);
@@ -992,9 +992,18 @@ void MainWindow::TestSLOT()
         index = ui->tabWidget->addTab(testview,str);
 
     }
-
     ui->tabWidget->setCurrentIndex(index);
+#endif
+    frmPDFWidget *widget = new frmPDFWidget;
+    widget->show();
+//    QString str = "测试测试";
+//    int index = findTabByName(str);
+//    if(index == -1){
+//        frmPDFWidget *widget = new frmPDFWidget;
+//        index = ui->tabWidget->addTab(widget,str);
 
+//    }
+//    ui->tabWidget->setCurrentIndex(index);
 }
 
 void MainWindow::OpenRealtimeView()

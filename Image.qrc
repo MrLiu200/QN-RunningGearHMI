@@ -43,6 +43,8 @@
         <file>image/Icon/pk.png</file>
         <file>image/Icon/download.ico</file>
         <file>image/Icon/run.png</file>
+        <file>image/report/KM4Report_1.png</file>
+        <file>image/report/KM4Report_2.png</file>
     </qresource>
     <qresource prefix="/other">
         <file>image/other/help.txt</file>

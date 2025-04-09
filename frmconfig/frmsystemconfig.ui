@@ -356,6 +356,9 @@
         <property name="text">
          <string>监听IP</string>
         </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
        </widget>
       </item>
       <item row="0" column="1">
