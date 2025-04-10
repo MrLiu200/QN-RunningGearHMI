@@ -69,6 +69,7 @@ void MainWindow::InitFrom()
     QMenu *configmenu = ui->menubar->addMenu("设置(&C)");
     QMenu *logmenu = ui->menubar->addMenu("日志查询(&L)");
     QMenu *usermenu = ui->menubar->addMenu("用户管理(&U)");
+    QAction *reportmenu = ui->menubar->addAction("诊断报告");
     QAction *rebootmenu = ui->menubar->addAction("重启");
     QMenu *helpmenu = ui->menubar->addMenu("帮助(&H)");
 
@@ -165,6 +166,7 @@ void MainWindow::InitFrom()
 
     connect(debugmenu,&QAction::triggered,this,&MainWindow::OpenRealtimeView);
 
+    connect(reportmenu,&QAction::triggered,this,&MainWindow::ShowReportWidget);
     connect(rebootmenu,&QAction::triggered,this,&MainWindow::restartApplication);
     connect(aboutAction,&QAction::triggered,this,&MainWindow::AboutWidget);
     connect(helpAction,&QAction::triggered,this,&MainWindow::helpdocWidget);
@@ -471,6 +473,12 @@ void MainWindow::on_check_point_clicked(bool checked)
         ui->check_carriage->setChecked(false);
     }
     ui->combox_point->setEnabled(checked);
+}
+
+void MainWindow::ShowReportWidget()
+{
+    frmPDFWidget *widget = new frmPDFWidget;
+    widget->show();
 }
 
 void MainWindow::restartApplication()
@@ -994,16 +1002,12 @@ void MainWindow::TestSLOT()
     }
     ui->tabWidget->setCurrentIndex(index);
 #endif
+#if 0
+    //诊断报告导出界面
     frmPDFWidget *widget = new frmPDFWidget;
     widget->show();
-//    QString str = "测试测试";
-//    int index = findTabByName(str);
-//    if(index == -1){
-//        frmPDFWidget *widget = new frmPDFWidget;
-//        index = ui->tabWidget->addTab(widget,str);
-
-//    }
-//    ui->tabWidget->setCurrentIndex(index);
+#endif
+    QMessageBox::information(this,"测试","这是一个测试按钮");
 }
 
 void MainWindow::OpenRealtimeView()

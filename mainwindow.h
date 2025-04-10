@@ -27,6 +27,8 @@ private slots:
     void on_check_carriage_clicked(bool checked);
 
     void on_check_point_clicked(bool checked);
+    //报告
+    void ShowReportWidget();
     //重启
     void restartApplication();
     //查询排列测点

@@ -716,7 +716,7 @@ bool KM4Template::drawReport()
     DrawTableInfo(cursor,"KM4-"+CarNum,StartTime,EndTime);
     doc->print(&printer);
 
-    DrawResultOverview(cursor, doc,"KM4-T35");
+    DrawResultOverview(cursor, doc,"KM4-"+CarNum);
     doc->print(&printer);
 
 
