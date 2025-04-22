@@ -225,7 +225,20 @@ void FrmRMAssociation::on_btn_save_clicked()
                 validRow = false;
                 break;
             }
-            rowlist.append(value.toString());
+            QString newtype = "Slave";
+            if(col == 0){//等于第0列时，需要将类型转换回去，而不是汉字类型
+                QString oldtype = value.toString();
+                if(oldtype == "主机"){
+                    newtype = "Host";
+                }else if(oldtype == "备用主机"){
+                    newtype = "StandbyHost";
+                }else if(oldtype == "从机"){
+                    newtype = "Slave";
+                }
+            }else{
+                newtype = value.toString();
+            }
+            rowlist.append(newtype);
         }
         if (!validRow) continue;
         UDPMulticastAPI::Instance()->UpdateLinkDevice(Wagon,0,rowlist.at(0),
