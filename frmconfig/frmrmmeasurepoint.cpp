@@ -71,7 +71,7 @@ void FrmRMMeasurePoint::InitTable()
         model->setItem(i, 17, new QStandardItem(device.drivenwheelName));
         model->setItem(i, 18, new QStandardItem(QString::number(device.drivenwheelTeethNum)));
         model->setItem(i, 19, new QStandardItem(device.version));
-        model->setItem(i, 20, new QStandardItem(device.IsEnable ? "Enabled" : "Disabled"));
+        model->setItem(i, 20, new QStandardItem(device.IsEnable ? "Enable" : "Disable"));
     }
     ui->tablemain->setModel(model);
     for(int i=0;i<columnNames.size();i++){
@@ -161,7 +161,7 @@ void FrmRMMeasurePoint::RefreshData()
         model->setItem(i, 17, new QStandardItem(device.drivenwheelName));
         model->setItem(i, 18, new QStandardItem(QString::number(device.drivenwheelTeethNum)));
         model->setItem(i, 19, new QStandardItem(device.version));
-        model->setItem(i, 20, new QStandardItem(device.IsEnable ? "Enabled" : "Disabled"));
+        model->setItem(i, 20, new QStandardItem(device.IsEnable ? "Enable" : "Disable"));
     }
     connect(model,&QStandardItemModel::dataChanged,this,&FrmRMMeasurePoint::DataChange);
 }
@@ -306,7 +306,7 @@ void FrmRMMeasurePoint::on_btn_add_clicked()
     model->setData(model->index(count, 17), drivenwheelName);
     model->setData(model->index(count, 18), QString::number(drivenwheelTeethNum));
     model->setData(model->index(count, 19), version);
-    model->setData(model->index(count, 20), IsEnable ? "Enabled" : "Disabled", Qt::EditRole);
+    model->setData(model->index(count, 20), IsEnable ? "Enable" : "Disable", Qt::EditRole);
 }
 
 void FrmRMMeasurePoint::on_btn_delete_clicked()
