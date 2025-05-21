@@ -106,6 +106,9 @@ private:
     //软件版本返回
     void APPVersionReturn(QString DataContent);
 
+    //所有板卡状态返回
+    void AllBoardStateReturn(QString DataContent);
+
     //错误指令返回
     void ErrorOrderReturn(QString DataContent);
 public:
@@ -200,6 +203,9 @@ public:
 
     //获取软件版本信息
     void GetVersion(QString wagon);
+
+    //获取所有板卡状态
+    void GetAllBoardState(QString wagon);
 signals:
     //设备上线
     void DeviceGoOnline(QString wagon);
@@ -233,6 +239,8 @@ signals:
     void UpdateProgress(int currentcount);
     //软件版本返回
     void Versionreturn(QString wagon,QString version);
+    //所有板卡状态返回
+    void AllBoardStatereturn(QString wagon, QStringList AllInfo);
     //以下为实时显示界面所需信号
     //量纲值返回
     void ReturnEigenvalue(QString Wagon, qint8 id, qint8 ch, quint32 speed, double AmbientTem,double PointTem,QString time,

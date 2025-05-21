@@ -63,10 +63,10 @@ void FrmRMUpgrade::LoadPre()
     QCheckBox *cbox_allpre = new QCheckBox(QString("全部前置处理器"));
     buttonGroup->addButton(cbox_allpre);
     gridLayout->addWidget(cbox_allpre, 0, 0);
-    for(int i=1;i<prelist.size();i++){
+    for(int i=0;i<prelist.size();i++){
         QCheckBox *checkBox = new QCheckBox(QString("设备id: %1").arg(prelist.at(i)));
         buttonGroup->addButton(checkBox);
-        gridLayout->addWidget(checkBox, i / 2, i % 2);
+        gridLayout->addWidget(checkBox, (i+1) / 2, (i+1) % 2);
     }
 }
 

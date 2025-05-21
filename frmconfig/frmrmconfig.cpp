@@ -15,6 +15,7 @@
 #include "frmrmalarmlimit.h"
 #include "frmrmdatasave.h"
 #include "frmrmupgrade.h"
+#include "frmboardstate.h"
 FrmRMConfig::FrmRMConfig(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::FrmRMConfig)
@@ -96,31 +97,33 @@ void FrmRMConfig::InitWidget()
     //测点配置
     FrmRMMeasurePoint *rmmeasurepoint = new FrmRMMeasurePoint;
     ui->stackedWidget->addWidget(rmmeasurepoint);
-
+    //轴承配置
     FrmRMBearing *bearingconfig = new FrmRMBearing;
     ui->stackedWidget->addWidget(bearingconfig);
-
+    //关联设备
     FrmRMAssociation *associationconfig = new FrmRMAssociation;
     ui->stackedWidget->addWidget(associationconfig);
-
+    //定时任务
     FrmRMTimertask *timertaskconfig = new FrmRMTimertask;
     ui->stackedWidget->addWidget(timertaskconfig);
-
+    //网络信息
     FrmRMNetwork *rmnetwork = new FrmRMNetwork;
     ui->stackedWidget->addWidget(rmnetwork);
-
+    //车辆信息
     FrmRMCarInfo *rmcarinfo = new FrmRMCarInfo;
     ui->stackedWidget->addWidget(rmcarinfo);
-
+    //报警阈值
     FrmRMAlarmLimit *rmalarmlimit = new FrmRMAlarmLimit;
     ui->stackedWidget->addWidget(rmalarmlimit);
-
+    //数据保存
     FrmRMDataSave *rmdatasave = new FrmRMDataSave;
     ui->stackedWidget->addWidget(rmdatasave);
-
+    //设备升级
     FrmRMUpgrade *rmupgrade = new FrmRMUpgrade;
     ui->stackedWidget->addWidget(rmupgrade);
-
+    //板卡状态
+    FrmBoardState *boardState = new FrmBoardState;
+    ui->stackedWidget->addWidget(boardState);
 
     ui->stackedWidget->setCurrentIndex(0);
 
@@ -217,6 +220,12 @@ void FrmRMConfig::CheckWagon()
         }else{
             widget->RedrawData();
         }
+    }else if(FrmBoardState *widget = qobject_cast<FrmBoardState*>(currentwidget)){
+        if(widget->GetCurrentWagon() != selectedwagon){
+            widget->SetCurrentWagon(selectedwagon);
+        }else{
+            widget->RedrawData();
+        }
     }
 }
 
@@ -260,6 +269,8 @@ void FrmRMConfig::FunctionViewSwitch(QAbstractButton *btn)
         ui->stackedWidget->setCurrentIndex(7);
     }else if(str == "设备升级"){
         ui->stackedWidget->setCurrentIndex(8);
+    }else if(str == "板卡状态"){
+        ui->stackedWidget->setCurrentIndex(9);
     }else if(str == "设备重启"){
         RMReboot();
     }
@@ -309,5 +320,8 @@ void FrmRMConfig::WagonSwitch(QAbstractButton *btn)
     }else if(FrmRMUpgrade *widget = qobject_cast<FrmRMUpgrade*>(currentwidget)){
         widget->SetCurrentWagon(selectedwagon);
         qDebug()<< "当前为设备升级配置";
+    }else if(FrmBoardState *widget = qobject_cast<FrmBoardState*>(currentwidget)){
+        widget->SetCurrentWagon(selectedwagon);
+        qDebug()<< "当前为板卡状态界面";
     }
 }

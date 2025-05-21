@@ -247,6 +247,19 @@
           </widget>
          </item>
          <item>
+          <widget class="QToolButton" name="tbtn_boardstate">
+           <property name="minimumSize">
+            <size>
+             <width>160</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>板卡状态</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QToolButton" name="tbtn_devicereboot">
            <property name="minimumSize">
             <size>

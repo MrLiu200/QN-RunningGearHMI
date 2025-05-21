@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FrmBoardState</class>
+ <widget class="QWidget" name="FrmBoardState">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1193</width>
+    <height>667</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="1" column="1">
+       <widget class="QGroupBox" name="gbox_net">
+        <property name="title">
+         <string>网络</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_3">
+         <item row="0" column="0">
+          <widget class="QLabel" name="lab_eth0state">
+           <property name="text">
+            <string>网卡0连接状态：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="txt_eth0state"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="lab_eth1state">
+           <property name="text">
+            <string>网卡1连接状态：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="txt_eth1state"/>
+         </item>
+         <item row="2" column="1">
+          <spacer name="verticalSpacer_5">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>118</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QGroupBox" name="gbox_led">
+        <property name="title">
+         <string>指示灯</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="0" column="0">
+          <widget class="QLabel" name="lab_ledrun">
+           <property name="text">
+            <string>运行指示灯：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="txt_ledrun"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="lab_ledpre">
+           <property name="text">
+            <string>前置指示灯：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="txt_ledpre"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="lab_ledone">
+           <property name="text">
+            <string>一级报警灯：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="txt_ledone"/>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="lab_ledtwo">
+           <property name="text">
+            <string>二级报警灯：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLineEdit" name="txt_ledtwo"/>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="lab_ledpis">
+           <property name="text">
+            <string>PIS指示灯：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QLineEdit" name="txt_ledpis"/>
+         </item>
+         <item row="5" column="1">
+          <spacer name="verticalSpacer_6">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QGroupBox" name="gbox_IO">
+        <property name="title">
+         <string>前置IO板卡</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_6">
+         <item row="0" column="0" rowspan="2">
+          <widget class="QLabel" name="lab_ioID">
+           <property name="text">
+            <string>板卡ID：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="txt_ioID"/>
+         </item>
+         <item row="1" column="1" rowspan="2">
+          <widget class="QLineEdit" name="txt_iostate"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="lab_iostate">
+           <property name="text">
+            <string>是否在线：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="lab_ioselfstate">
+           <property name="text">
+            <string>自检状态：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLineEdit" name="txt_ioselfstate"/>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="lab_ioversion">
+           <property name="text">
+            <string>软件版本：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QLineEdit" name="txt_ioversion"/>
+         </item>
+         <item row="5" column="1">
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QGroupBox" name="gbox_compute">
+        <property name="title">
+         <string>计算板卡</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_4">
+         <item row="3" column="1">
+          <widget class="QLineEdit" name="txt_computeversion"/>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="txt_computeID"/>
+         </item>
+         <item row="1" column="1" rowspan="2">
+          <widget class="QLineEdit" name="txt_computestate"/>
+         </item>
+         <item row="0" column="0" rowspan="2">
+          <widget class="QLabel" name="lab_computeID">
+           <property name="text">
+            <string>板卡ID：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="lab_computestate">
+           <property name="text">
+            <string>是否在线：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="lab_computeversion">
+           <property name="text">
+            <string>软件版本：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <spacer name="verticalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>66</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QGroupBox" name="gbox_speed">
+        <property name="title">
+         <string>转速板卡</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_7">
+         <item row="0" column="0" rowspan="2">
+          <widget class="QLabel" name="lab_speedID">
+           <property name="text">
+            <string>板卡ID：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="txt_speedID"/>
+         </item>
+         <item row="1" column="1" rowspan="2">
+          <widget class="QLineEdit" name="txt_speedstate"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="lab_speedstate">
+           <property name="text">
+            <string>是否在线：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="lab_speedselfstate">
+           <property name="text">
+            <string>自检状态：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLineEdit" name="txt_speedselfstate"/>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="lab_speedversion">
+           <property name="text">
+            <string>软件版本：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QLineEdit" name="txt_speedversion"/>
+         </item>
+         <item row="5" column="1">
+          <spacer name="verticalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QGroupBox" name="gbox_comm">
+        <property name="title">
+         <string>通信板卡</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_5">
+         <item row="0" column="0" rowspan="2">
+          <widget class="QLabel" name="lab_commID">
+           <property name="text">
+            <string>板卡ID：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="txt_commID"/>
+         </item>
+         <item row="1" column="1" rowspan="2">
+          <widget class="QLineEdit" name="txt_commstate"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="lab_commstate">
+           <property name="text">
+            <string>是否在线：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="lab_commselfstate">
+           <property name="text">
+            <string>自检状态：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLineEdit" name="txt_commselfstate"/>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="lab_commversion">
+           <property name="text">
+            <string>软件版本：</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QLineEdit" name="txt_commversion"/>
+         </item>
+         <item row="5" column="1">
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer_7">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>185</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QWidget" name="widget_bottom" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>453</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_fresh">
+        <property name="text">
+         <string>刷新</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -190,6 +190,9 @@ void UDPMulticastAPI::CheckData(const QByteArray data)
             case 0x89://软件版本
                 APPVersionReturn(DataContent);
                 break;
+            case 0x8A://板卡状态
+                AllBoardStateReturn(DataContent);
+                break;
             case 0xFF://错误指令
                 ErrorOrderReturn(DataContent);
                 break;
@@ -519,6 +522,17 @@ void UDPMulticastAPI::APPVersionReturn(QString DataContent)
     QString wagon = list.at(0);
     QString version = list.at(1);
     Q_EMIT Versionreturn(wagon,version);
+}
+
+void UDPMulticastAPI::AllBoardStateReturn(QString DataContent)
+{
+    QStringList list = DataContent.split(";");
+    if(list.isEmpty()) return;
+    QString wagon = list.at(0);
+    list.removeFirst();
+    if(!list.isEmpty()){
+        Q_EMIT AllBoardStatereturn(wagon,list);
+    }
 }
 
 void UDPMulticastAPI::ErrorOrderReturn(QString DataContent)
@@ -861,6 +875,13 @@ void UDPMulticastAPI::GetVersion(QString wagon)
 {
     if(wagon.isEmpty()) return;
     QByteArray array = GetPackage(0x89,wagon);
+    senddata(array);
+}
+
+void UDPMulticastAPI::GetAllBoardState(QString wagon)
+{
+    if(wagon.isEmpty()) return;
+    QByteArray array = GetPackage(0x8A,wagon);
     senddata(array);
 }
 

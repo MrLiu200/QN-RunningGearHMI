@@ -9,7 +9,8 @@ QWidget {
 
 /* QToolButton - 左侧菜单 */
 #tbtn_measurePoint, #tbtn_bearing, #tbtn_association, #tbtn_timertask, #tbtn_network,
-#tbtn_carinfo, #tbtn_alarmlimit, #tbtn_datasave, #tbtn_APPUpdate, #tbtn_devicereboot {
+#tbtn_carinfo, #tbtn_alarmlimit, #tbtn_datasave, #tbtn_APPUpdate, #tbtn_devicereboot,
+#tbtn_boardstate {
     background-color: #3A3F44; /* 深色按钮 */
     color: #76C7C0; /* 青绿色文字 */
     border-radius: 8px;
@@ -20,14 +21,14 @@ QWidget {
 
 #tbtn_measurePoint:hover, #tbtn_bearing:hover, #tbtn_association:hover, #tbtn_timertask:hover,
 #tbtn_network:hover, #tbtn_carinfo:hover, #tbtn_alarmlimit:hover, #tbtn_datasave:hover,
-#tbtn_APPUpdate:hover, #tbtn_devicereboot:hover {
+#tbtn_APPUpdate:hover, #tbtn_devicereboot:hover , #tbtn_boardstate:hover{
     background-color: #4F565D; /* 浅灰色 Hover 效果 */
 }
 
 /* 选中状态的高亮 */
 #tbtn_measurePoint:checked, #tbtn_bearing:checked, #tbtn_association:checked, #tbtn_timertask:checked,
 #tbtn_network:checked, #tbtn_carinfo:checked, #tbtn_alarmlimit:checked, #tbtn_datasave:checked,
-#tbtn_APPUpdate:checked, #tbtn_devicereboot:checked {
+#tbtn_APPUpdate:checked, #tbtn_devicereboot:checked  , #tbtn_boardstate:checked{
     background-color: #1976D2; /* 高亮蓝色 */
     color: white; /* 文字变白 */
     font-weight: bold;

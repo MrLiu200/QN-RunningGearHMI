@@ -1,6 +1,7 @@
 FORMS += \
     $$PWD/datadownload.ui \
     $$PWD/deviceupgrade.ui \
+    $$PWD/frmboardstate.ui \
     $$PWD/frmrmalarmlimit.ui \
     $$PWD/frmrmassociation.ui \
     $$PWD/frmrmbearing.ui \
@@ -21,6 +22,7 @@ FORMS += \
 HEADERS += \
     $$PWD/datadownload.h \
     $$PWD/deviceupgrade.h \
+    $$PWD/frmboardstate.h \
     $$PWD/frmrmalarmlimit.h \
     $$PWD/frmrmassociation.h \
     $$PWD/frmrmbearing.h \
@@ -42,6 +44,7 @@ HEADERS += \
 SOURCES += \
     $$PWD/datadownload.cpp \
     $$PWD/deviceupgrade.cpp \
+    $$PWD/frmboardstate.cpp \
     $$PWD/frmrmalarmlimit.cpp \
     $$PWD/frmrmassociation.cpp \
     $$PWD/frmrmbearing.cpp \
