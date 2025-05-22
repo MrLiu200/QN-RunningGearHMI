@@ -140,6 +140,15 @@ void FrmBoardState::RedrawData()
         if (list.size() != expectedLengths.value(hand)) continue;
 
         if (stateMap.contains(hand)) {
+            if((hand != "NETWORK") && (hand != "LED")){
+                //替换在线状态。0-在线 1-离线
+                QString state = list.at(2);
+                if(state == "0"){
+                    list.replace(2,"在线");
+                }else if(state == "1"){
+                    list.replace(2,"离线");
+                }
+            }
             ReflushData(list, stateMap.value(hand));
         }
     }
@@ -172,6 +181,16 @@ void FrmBoardState::UDPDataReturn(QString wagon, QStringList Statelist)
         if (list.size() != expectedLengths.value(hand)) continue;
 
         if (stateMap.contains(hand)) {
+            if((hand != "NETWORK") && (hand != "LED")){
+                //替换在线状态。0-在线 1-离线
+                QString state = list.at(2);
+                if(state == "0"){
+                    list.replace(2,"在线");
+                }else if(state == "1"){
+                    list.replace(2,"离线");
+                }
+            }
+
             ReflushData(list, stateMap.value(hand));
         }
     }

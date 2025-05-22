@@ -295,16 +295,6 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <widget class="QLabel" name="labAppVersion">
-        <property name="text">
-         <string>软件版本：V2024062613212001</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item>
        <widget class="QLabel" name="lab_copyright">
         <property name="text">
          <string>版权</string>

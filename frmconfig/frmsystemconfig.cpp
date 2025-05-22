@@ -70,9 +70,8 @@ void frmSystemConfig::aboutconfigInit()
     ui->labAuthor->setText("作者: Mr.Liu");
     ui->labTel->setText("Tel: 152xxxx4418");
     ui->labWebsite->setText("官网: http://www.qnode.cn/");
-    ui->labAppVersion->setText("软件版本: v20241385513");
     ui->lab_copyright->setText("版权所有:上海诠诺物联网技术有限公司");
-    ui->lab_email->setText("Email: 1207997878@qq.com");
+    ui->lab_email->setText("Email: liumengguangboy@163.com");
 
 }
 
