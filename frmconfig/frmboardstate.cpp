@@ -157,6 +157,7 @@ void FrmBoardState::RedrawData()
 QString FrmBoardState::GetCurrentWagon() const
 {
     return this->Wagon;
+    qDebug()<<"ces ";
 }
 
 void FrmBoardState::SetCurrentWagon(const QString &wagon)
